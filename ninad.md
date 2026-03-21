@@ -70,8 +70,11 @@ subtitle: Click thumbnail to download ninad
   </figure>
 
   <figure class="ninad-card">
-    {% include pdf.html thumbnail_path="/assets/Ninads/17.png" pdf_path="/assets/Ninads/ninad_2017.pdf" only_thumbnail=true %}
-    <figcaption class="ninad-caption-banner">Ninad 2017</figcaption>
-  </figure>
+  {% include pdf.html 
+     thumbnail_path="/assets/Ninads/17.png" 
+     pdf_path="https://drive.google.com/uc?export=download&id=1w8JTz5IaMSysoqtxqyiFksKrQ9it64VJ" 
+     only_thumbnail=true %} 
+  <figcaption class="ninad-caption-banner">Ninad 2017</figcaption>
+</figure>
 
 </div>
