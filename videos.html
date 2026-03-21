@@ -8,127 +8,156 @@ subtitle: Click on the thumbnail to watch
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* 1. THEME OVERRIDES: FORCE FULL WIDTH */
-        .container-md {
-            max-width: 100% !important;
-            padding: 0 !important;
-        }
-        
-        .col-xl-8.offset-xl-2, .col-lg-10.offset-lg-1 {
-            max-width: 100% !important;
-            margin-left: 0 !important;
-            flex: 0 0 100% !important;
-        }
+    /* 1. THEME OVERRIDES: FORCING FULL-WIDTH */
+    .container-md { 
+        max-width: 100% !important; 
+        padding: 0 !important; 
+    }
+    
+    .col-xl-8.offset-xl-2, .col-lg-10.offset-lg-1 {
+        max-width: 100% !important; 
+        margin-left: 0 !important; 
+        flex: 0 0 100% !important;
+    }
 
-        /* 2. LAYOUT CONTAINER */
+    /* 2. LAYOUT CONTAINER */
+    .videos-page-container {
+        display: flex;
+        flex-direction: row; /* Sidebar left, Content right */
+        gap: 30px;
+        align-items: flex-start;
+        margin-top: 30px;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 4% !important;
+        box-sizing: border-box;
+    }
+
+    /* 3. SIDEBAR STYLING */
+    .toc-sidebar {
+        flex: 0 0 240px; 
+        position: sticky;
+        top: 100px;
+        background: #c5d1c0 !important;
+        padding: 25px !important;
+        border-radius: 15px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+        z-index: 10;
+    }
+
+    .toc-title {
+        font-family: 'Amatic SC', cursive !important;
+        font-size: 2.2rem !important;
+        margin: 0 0 15px 0 !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        padding-bottom: 10px;
+        color: #404040 !important;
+        text-transform: uppercase;
+    }
+
+    .toc-list { 
+        list-style: none !important; 
+        padding: 0 !important; 
+        margin: 0 !important; 
+    }
+
+    .toc-list li {
+        padding: 8px 0 !important;
+        font-family: 'Amatic SC', cursive !important;
+        font-size: 1.7rem !important;
+        cursor: pointer;
+        color: #404040 !important;
+        transition: all 0.2s ease;
+    }
+
+    .toc-list li:hover, .toc-list li.active { 
+        color: #ffffff !important; 
+        font-weight: bold; 
+    }
+
+    /* 4. VIDEO CONTENT AREA */
+    .videos-content { 
+        flex: 1; 
+        min-width: 0; 
+    }
+
+    .video-grid {
+        display: flex;
+        flex-wrap: wrap; /* Allows multiple rows */
+        gap: 20px;
+        width: 100%;
+    }
+
+    /* Percentage-based sizing for flexibility */
+    .video-item {
+        flex: 0 0 31%; /* 3 videos per row on desktop */
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        min-width: 250px;
+    }
+
+    .video-wrapper {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9; /* Standard video widescreen ratio */
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        background: #000;
+        cursor: pointer;
+    }
+
+    .video-wrapper img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+    }
+
+    .video-item figcaption {
+        margin-top: 12px;
+        font-family: 'Amatic SC', cursive !important;
+        font-size: 1.4rem !important;
+        text-align: center;
+        color: #444;
+        line-height: 1.2;
+        white-space: normal; /* Ensures text wraps to new lines */
+    }
+
+    /* 5. MOBILE ADJUSTMENTS */
+    @media (max-width: 992px) {
         .videos-page-container {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-            margin-top: 30px;
-            max-width: 1300px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 3% !important;
-            padding-right: 5% !important;
-            box-sizing: border-box;
+            flex-direction: column; /* Move sidebar to TOP */
+            align-items: center;
         }
 
-        /* 3. SIDEBAR STYLING */
         .toc-sidebar {
-            flex: 0 0 240px !important;
-            position: sticky !important;
-            top: 100px;
-            background: #c5d1c0 !important;
-            padding: 25px !important;
-            border-radius: 15px !important;
-            border: none !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-        }
-
-        .toc-title {
-            font-family: 'Amatic SC', cursive !important;
-            font-size: 2.2rem !important;
-            margin: 0 0 15px 0 !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-            padding-bottom: 10px;
-            color: #404040 !important;
-            text-transform: uppercase;
-        }
-
-        .toc-list {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-
-        .toc-list li {
-            padding: 8px 0 !important;
-            font-family: 'Amatic SC', cursive !important;
-            font-size: 1.7rem !important;
-            cursor: pointer;
-            color: #404040 !important;
-            transition: all 0.2s ease;
-        }
-
-        .toc-list li:hover, .toc-list li.active {
-            color: #ffffff !important;
-            font-weight: bold;
-        }
-
-        /* 4. VIDEO GRID */
-        .videos-content {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            flex: 0 0 auto;
+            width: 100% !important;
+            position: relative !important;
+            top: 0 !important;
+            margin-bottom: 30px !important;
         }
 
         .video-item {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
+            flex: 0 0 47%; /* 2 videos per row on mobile */
+            min-width: 160px;
         }
+        
+        .toc-title { font-size: 1.8rem !important; }
+        .toc-list li { font-size: 1.4rem !important; }
+    }
 
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9; 
-            background: #000;
-            cursor: pointer;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    @media (max-width: 480px) {
+        .video-item {
+            flex: 0 0 100%; /* 1 video per row on small phones */
         }
+    }
 
-        .video-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-
-        .video-item figcaption {
-            margin-top: 10px;
-            font-family: 'Amatic SC', cursive !important;
-            font-size: 1.4rem !important;
-            text-align: center;
-            color: #444;
-            line-height: 1.2;
-        }
-
-        .hidden-item { display: none !important; }
-
-        @media (max-width: 992px) {
-            .videos-page-container { flex-direction: column; }
-            .toc-sidebar {
-                position: relative !important;
-                top: 0 !important;
-                width: 100% !important;
-                flex: none !important;
-                margin-bottom: 20px !important;
-            }
-        }
-    </style>
+    /* Utility */
+    .hidden-item { display: none !important; }
+</style>
 </head>
 
 <body>
