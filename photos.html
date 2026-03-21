@@ -379,63 +379,61 @@ subtitle: Click on thumbnail to open the album
         </div>
     </div>
 
-    <script>
-        const itemsPerPage = 12;
-        let currentYearFilter = '2025-26';
+  <script>
+    const itemsPerPage = 10;
+    let currentYearFilter = '2025-26';
 
-        function filterAcademicYear(year, element) {
-            currentYearFilter = year;
-            const allItems = Array.from(document.querySelectorAll('.album-item'));
-            const btn = document.getElementById('load-more-btn');
+    function filterAcademicYear(year, element) {
+        // 0. INSTANT SCROLL TO TOP
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // 1. Update Active state in Sidebar
-            document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
-            if(element) element.classList.add('active');
+        currentYearFilter = year;
+        const allItems = Array.from(document.querySelectorAll('.album-item'));
+        const btn = document.getElementById('load-more-btn');
 
-            // 2. Hide everything initially
-            allItems.forEach(item => {
-                item.classList.add('hidden-item');
-                item.classList.remove('current-filter-match');
-            });
+        // 1. Update Active state in Sidebar
+        document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
+        if(element) element.classList.add('active');
 
-            // 3. Find matches for the specific year
-            const matched = allItems.filter(item => 
-                year === 'all' || item.getAttribute('data-academic-year') === year
-            );
-
-            // 4. Mark matches and show the first page
-            matched.forEach((item, index) => {
-                item.classList.add('current-filter-match');
-                if (index < itemsPerPage) {
-                    item.classList.remove('hidden-item');
-                }
-            });
-
-            // 5. Update the "Load More" button state
-            updateLoadMoreButton(matched);
-        }
-
-        function updateLoadMoreButton(matchedList) {
-            const btn = document.getElementById('load-more-btn');
-            const hiddenItemsInMatch = matchedList.filter(item => item.classList.contains('hidden-item'));
-
-            if (hiddenItemsInMatch.length > 0) {
-                btn.parentElement.style.display = 'block';
-                // Reset click listener
-                btn.onclick = function() {
-                    const nextBatch = hiddenItemsInMatch.slice(0, itemsPerPage);
-                    nextBatch.forEach(el => el.classList.remove('hidden-item'));
-                    // Recurse to check if we need to hide the button now
-                    updateLoadMoreButton(matchedList);
-                };
-            } else {
-                btn.parentElement.style.display = 'none';
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            // Initialize with 2025-26 visible
-            filterAcademicYear('2025-26', document.querySelector('.toc-list li.active'));
+        // 2. Hide everything initially
+        allItems.forEach(item => {
+            item.classList.add('hidden-item');
         });
-    </script>
+
+        // 3. Find matches for the specific year
+        const matched = allItems.filter(item => 
+            year === 'all' || item.getAttribute('data-academic-year') === year
+        );
+
+        // 4. Show the first batch of matched items
+        matched.slice(0, itemsPerPage).forEach(item => {
+            item.classList.remove('hidden-item');
+        });
+
+        // 5. Update the "Load More" button logic
+        updateLoadMoreButton(matched);
+    }
+
+    function updateLoadMoreButton(matchedList) {
+        const btn = document.getElementById('load-more-btn');
+        // Find items that belong to this year but are currently hidden
+        const hiddenItemsInMatch = matchedList.filter(item => item.classList.contains('hidden-item'));
+
+        if (hiddenItemsInMatch.length > 0) {
+            btn.parentElement.style.display = 'block';
+            btn.onclick = function() {
+                const nextBatch = hiddenItemsInMatch.slice(0, itemsPerPage);
+                nextBatch.forEach(el => el.classList.remove('hidden-item'));
+                // Refresh button state
+                updateLoadMoreButton(matchedList);
+            };
+        } else {
+            btn.parentElement.style.display = 'none';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        filterAcademicYear('2025-26', document.querySelector('.toc-list li.active'));
+    });
+</script>
 </body>
