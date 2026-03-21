@@ -332,44 +332,68 @@ subtitle: Click on the thumbnail to watch
     </div>
 
     <script>
-        function filterVideos(year, element) {
-            const allItems = Array.from(document.querySelectorAll('.video-item'));
-            const itemsPerPage = 10;
-            
-            // Highlight active sidebar item
-            document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
-            element.classList.add('active');
+    const itemsPerPage = 10; // Adjusted to match photos for consistency
 
-            // Filter items based on year
-            const matched = allItems.filter(item => 
-                year === 'all' || item.getAttribute('data-academic-year') === year
-            );
+    function filterVideos(year, element) {
+        // 1. INSTANT SCROLL TO TOP
+        // Triggers whenever a new year is selected from the sidebar
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Hide all and show first batch of matched
-            allItems.forEach(item => item.classList.add('hidden-item'));
-            matched.slice(0, itemsPerPage).forEach(item => item.classList.remove('hidden-item'));
+        const allItems = Array.from(document.querySelectorAll('.video-item'));
+        
+        // 2. Highlight active sidebar item
+        document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
+        if (element) element.classList.add('active');
 
-            // Load More Logic
-            const btn = document.getElementById('load-more-btn');
-            if (matched.length > itemsPerPage) {
-                btn.parentElement.style.display = 'block';
-                btn.onclick = () => {
-                    const currentlyHidden = matched.filter(i => i.classList.contains('hidden-item'));
-                    currentlyHidden.slice(0, itemsPerPage).forEach(i => i.classList.remove('hidden-item'));
-                    if (matched.filter(i => i.classList.contains('hidden-item')).length === 0) btn.parentElement.style.display = 'none';
-                };
-            } else {
-                btn.parentElement.style.display = 'none';
-            }
+        // 3. Filter items based on year
+        const matched = allItems.filter(item => 
+            year === 'all' || item.getAttribute('data-academic-year') === year
+        );
+
+        // 4. Hide all items initially
+        allItems.forEach(item => item.classList.add('hidden-item'));
+
+        // 5. Show the first batch of matched videos
+        matched.slice(0, itemsPerPage).forEach(item => item.classList.remove('hidden-item'));
+
+        // 6. Load More Logic
+        updateVideoLoadMore(matched);
+    }
+
+    function updateVideoLoadMore(matchedList) {
+        const btn = document.getElementById('load-more-btn');
+        // Find videos that belong to the current year but are still hidden
+        const hiddenInMatch = matchedList.filter(item => item.classList.contains('hidden-item'));
+
+        if (hiddenInMatch.length > 0) {
+            btn.parentElement.style.display = 'block';
+            btn.onclick = function() {
+                // Show the next batch
+                const nextBatch = hiddenInMatch.slice(0, itemsPerPage);
+                nextBatch.forEach(el => el.classList.remove('hidden-item'));
+                
+                // Re-run to check if button should disappear
+                updateVideoLoadMore(matchedList);
+            };
+        } else {
+            btn.parentElement.style.display = 'none';
         }
+    }
 
-        function loadVideo(container) {
-            const videoId = container.getAttribute('data-video');
-            container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%; height:100%;"></iframe>`;
-        }
+    // Function to swap thumbnail for the actual YouTube iframe
+    function loadVideo(container) {
+        const videoId = container.getAttribute('data-video');
+        container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+                                frameborder="0" 
+                                allow="autoplay; encrypted-media" 
+                                allowfullscreen 
+                                style="width:100%; height:100%;"></iframe>`;
+    }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            filterVideos('2025-26', document.querySelector('.toc-list li.active'));
-        });
-    </script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Initialize with the current academic year
+        const activeLi = document.querySelector('.toc-list li.active');
+        filterVideos('2025-26', activeLi);
+    });
+</script>
 </body>
