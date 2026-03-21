@@ -58,7 +58,7 @@ subtitle: Click thumbnail to download ninad
   <figure class="ninad-card">
     {% include pdf.html thumbnail_path="/assets/Ninads/25-26.png" 
     pdf_path="https://drive.google.com/uc?export=download&id=1BOHZ1iYSJ9j9mpoCR4AyvWRJUxMwauNh" only_thumbnail=true %} 
-<figcaption class="ninad-caption-banner">Ninad 2023-24</figcaption>
+<figcaption class="ninad-caption-banner">Ninad 2025-26</figcaption>
   </figure>
 
   <figure class="ninad-card">
