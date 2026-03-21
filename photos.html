@@ -22,28 +22,24 @@ subtitle: Click on thumbnail to open the album
         }
 
        /* 2. THE CLEAN CONTAINER */
+/* 2. MAIN CONTAINER */
 .photos-page-container {
     display: flex;
-    flex-wrap: wrap; /* Prevents wrapping to a second row */
-    gap: 1%; /* Use percentage for fluid spacing */
-    align-items: flex-start;
+    flex-wrap: nowrap; /* Sidebar and Content stay side-by-side */
+    gap: 3%;
     width: 100%;
-    max-width: 100% !important; /* Use full width */
-    padding: 0 1% !important;
-    box-sizing: border-box;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 2% !important;
 }
 
 /* 3. SIDEBAR */
 .toc-sidebar {
-    flex: 0 0 15%; /* Sidebar takes exactly 15% of screen width */
-    min-width: 80px; /* Safety minimum */
+    flex: 0 0 20%; /* Sidebar takes 20% of the screen width */
+    min-width: 120px; /* Prevents it from getting too skinny */
     position: sticky;
     top: 20px;
-    background: #c5d1c0 !important;
-    padding: 10px !important;
-    border-radius: 10px !important;
 }
-
         /* Fix the internal card if it's still rendering */
         .toc-card {
             background: transparent !important;
@@ -82,51 +78,69 @@ subtitle: Click on thumbnail to open the album
             font-weight: bold;
         }
 
-       /* 4. PHOTO ROW */
+     /* 4. PHOTO CONTENT */
 .photos-content {
-    flex: 1; /* Takes up the remaining 85% of the screen */
-    min-width: 0;
+    flex: 1; /* Takes up the remaining 80% */
 }
 
 .album-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Forces all albums into one row */
-    gap: 0.5%; /* Tight gap to fit more items */
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* This allows multiple rows */
+    gap: 20px; /* Space between albums */
 }
 
 .album-item {
-    flex: 1 1 auto; /* Items grow and shrink equally to fit the row */
-    min-width: 0; /* Allows items to shrink smaller than their content */
-    margin: 0;
+    /* Adjust these percentages to control how many photos per row */
+    /* 30% = ~3 per row, 45% = ~2 per row, 22% = ~4 per row */
+    flex: 0 0 30%; 
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .album-item img {
-    width: 100%;
+    width: 100%; /* Image fills the 30% width of the container */
     height: auto;
     aspect-ratio: 3 / 2;
     object-fit: cover;
+    border-radius: 12px;
 }
 
 .album-item figcaption {
-    font-size: 0.7rem !important; /* Shrink text so it doesn't wrap awkwardly */
-    white-space: normal; /* Allows title to wrap vertically if name is long */
+    font-size: 1.1rem !important;
+    text-align: center;
+    white-space: normal; /* Allows text to wrap to new lines */
+    margin-top: 8px;
 }
+       /* 5. MOBILE ADJUSTMENTS */
+@media (max-width: 992px) {
+    .photos-page-container {
+        flex-direction: column; /* Sidebar goes to the TOP */
+        align-items: center;
+        gap: 20px;
+    }
 
-        /* Mobile Adjustments */
-        @media (max-width: 992px) {
-            .photos-page-container {
-                flex-direction: column;
-            }
-            .toc-sidebar {
-                position: relative !important;
-                top: 0 !important;
-                width: 100% !important;
-                flex: none !important;
-                margin-bottom: 20px !important;
-            }
-        }
+    .toc-sidebar {
+        flex: 0 0 auto;
+        width: 100%; /* Sidebar takes full width at the top */
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 20px;
+    }
+
+    .album-grid {
+        justify-content: center; /* Center the photos on mobile */
+    }
+
+    .album-item {
+        /* Percentage-based: 45% means 2 photos per row on mobile */
+        flex: 0 0 45%; 
+        min-width: 140px; /* Prevents them from getting too tiny */
+    }
+
+    .toc-title { font-size: 1.8rem !important; }
+    .toc-list li { font-size: 1.4rem !important; }
+}
         
         .hidden-item { display: none !important; }
     </style>
