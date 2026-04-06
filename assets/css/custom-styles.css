@@ -401,7 +401,6 @@ main.container-md,
 
 /* --- 3. TABLE OF CONTENTS (STYLING) --- */
 .toc-card {
-    margin-top: 2vw;
     /* ADD THE SAGE COLOR HERE */
     background-color: #BDCDC0 !important; 
     padding: 25px;
@@ -477,7 +476,7 @@ main.container-md,
     .toc-sidebar {
         flex: 0 0 20%;
         position: sticky;
-        top: 40px;
+        top: 2vw;
         max-height: calc(100vh - 80px);
         overflow-y: auto;
     }
