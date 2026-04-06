@@ -1,24 +1,43 @@
-/* ==========================================================================
-   1. GLOBAL TYPOGRAPHY & FLUID SIZING
-   ========================================================================== */
-
-body,
-p,
-div {
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 300 !important;
-    font-size: clamp(1rem, 0.5rem + 0.68vw, 2.5rem);
-    color: #404040;
+.dropdown-item {
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: keep-all !important;
+/*    width: max-content !important; */
 }
 
-h1,
-.term-title,
-.post-title {
-    font-family: 'Amatic SC', cursive !important;
+/* 1. Reset the Bootstrap columns to be full-width of their parent */
+
+main .col-xl-8, 
+main .col-lg-10 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+}
+.navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
+    font-family: 'Poiret One', system-ui, sans-serif !important;
     font-weight: bold !important;
-    text-transform: uppercase !important;
 }
 
+.post-entry {
+    font-family: 'Montserrat', sans serif !important;
+}
+
+/* Target only the container inside the header */
+.intro-header .container-md, 
+.intro-header .container-lg, 
+.intro-header .container {
+    max-width: 1200px !important;
+    width: 100% !important;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Reduce the width of the main body content only */
+main.container-md {
+    max-width: 65% !important; /* Change this % to make it narrower */
+    width: 65% !important;
+    margin: 0 auto !important; /* Keeps the narrow body centered */
+}
 h1 {
     font-size: clamp(2.5rem, 2.5rem + 2.73vw, 8rem) !important;
     margin-bottom: 20px !important;
@@ -29,200 +48,204 @@ h2 {
     margin-bottom: 15px !important;
 }
 
-h3 {
-    font-family: 'Montserrat' !important;
-    font-weight: 300 !important;
-    font-size: clamp(1.25rem, 0.75rem + 1.0vw, 4rem) !important;
+h1, .term-title {
+  font-family: 'Amatic SC', sans-serif !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
 }
 
 .term-title {
     font-size: clamp(2rem, 1.5rem + 2.73vw, 8rem) !important;
 }
 
+.post-heading {
+    margin-top: 10px;
+}
+
+.post-entry {
+    font-size: clamp(0.75rem, 0.5rem + 0.6vw, 2rem) !important;
+}
+
+h3 {
+    font-family: 'Montserrat' !important;
+    font-weight: 300 !important;
+    font-size: clamp(1.25rem, 0.75rem + 1.0vw, 4rem) !important;
+}
 .post-meta {
     font-family: 'Poiret One', system-ui, sans-serif !important;
     font-size: clamp(0.75rem, 0.5rem + 0.85vw, 3rem) !important;
 }
 
-.post-entry {
-    font-family: 'Montserrat', sans serif !important;
-    font-size: clamp(0.75rem, 0.5rem + 0.6vw, 2rem) !important;
+
+.post-subheading {
+    font-family: 'Amatic SC', cursive !important;
+  font-size: clamp(1rem, 0.5rem + 1.0vw, 3.5rem) !important;
+    margin-top: 5px !important;
 }
 
-.post-subheading,
 .post-subtitle {
     font-family: 'Amatic SC', cursive !important;
-    font-size: clamp(1rem, 0.5rem + 1.0vw, 3.5rem) !important;
+  font-size: clamp(1rem, 0.5rem + 1.0vw, 3.5rem) !important;
     margin-top: 5px !important;
     font-weight: bold;
 }
 
-.blog-tags,
-.post-categories,
-.page-subheading {
+.post-title {
+    font-family: 'Amatic SC', cursive !important;
+    font-size: clamp(2rem, 1.5rem + 1.0vw, 4.5rem) !important;
+    text-transform: uppercase;
+    font-weight: bold !important;
+}
+
+
+/* Apply it to the whole body or specific elements */
+body, p, div {
+    font-family: 'Montserrat' !important;
+    font-weight: 300 !important;
+    font-size: clamp(1rem, 0.5rem + 0.68vw, 2.5rem);
+}
+
+/* Specifically for the Category/Post Meta as you asked earlier */
+.blog-tags, .post-categories, .blog-tags, .page-subheading {
     font-family: 'Amatic SC' !important;
     font-weight: bold;
     font-size: 1.25rem;
     margin-top: 10px;
     margin-bottom: 10px;
+    
+}
+.navbar .nav-link {
+    font-family: 'Poiret One', system-ui, sans-serif !important;
+    font-transform: uppercase ;
+    font-colour: "#E8F3DF" !important;
+    font-hover: "#FFFFFF" !important;
 }
 
-/* ==========================================================================
-   2. LAYOUT & CONTAINERS (90% WIDTH)
-   ========================================================================== */
-
-/* Force global layout to 90% */
-main.container-md,
-.container-md,
-.container-lg,
-.beautiful-jekyll-footer,
-.intro-header .container-md {
-    max-width: 90% !important;
-    width: 90% !important;
-    margin: 0 auto !important;
-}
-
-/* Specific Header Centering & Dimensions */
-.intro-header .container,
-.intro-header .container-lg {
-    max-width: 1200px !important;
-    width: 100% !important;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Narrow main body reset */
-main.container-md {
-    max-width: 65% !important; 
-    width: 65% !important;
-}
-
-/* Reset Bootstrap columns for full-width internal layout */
-main .col-xl-8,
-main .col-lg-10 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-}
-
-/* ==========================================================================
-   3. NAVIGATION & NAVBAR
-   ========================================================================== */
-
-.navbar-brand,
 .navabar-brand {
     font-family: 'Amatic SC', sans serif !important;
-    font-size: clamp(1rem, 1vw + 0.8rem, 1.3rem) !important;
-    font-weight: 500;
+    font-colour: "#E8F3DF" !important;
+    font-hover: "#FFFFFF" !important;
 }
 
-.navbar .nav-link,
-.navbar-custom .nav-link {
-    font-family: 'Poiret One', system-ui, sans-serif !important;
-    text-transform: uppercase;
-    font-size: clamp(0.8rem, 0.25vw + 0.75rem, 1.1rem) !important;
-    padding-top: 10px;
-    padding-bottom: 10px;
+/* --- Updated Album Grid (Matches Video Grid) --- */
+.album-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Increased from 30px to match video-grid gap */
+    max-width: 1200px; /* Increased from 1000px to match video-grid */
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
-.navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
-    font-family: 'Poiret One', system-ui, sans-serif !important;
-    font-weight: bold !important;
-    white-space: normal !important;
-    overflow-wrap: normal !important;
-    word-break: keep-all !important;
-}
-
-.dropdown-toggle::after {
-    vertical-align: middle;
-}
-
-/* Desktop Hover Dropdowns */
-@media only screen and (min-width: 992px) {
-    .navbar-nav .dropdown:hover > .dropdown-menu {
-        display: block !important;
-        margin-top: 0 !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    .dropdown-menu {
-        display: block !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        transition: all 0.3s ease !important;
-    }
-}
-
-/* ==========================================================================
-   4. SEARCH OVERLAY (OPTIMIZED)
-   ========================================================================== */
-
-#beautifuljekyll-search-overlay {
-    background-color: rgba(93, 109, 90, 0.3) !important;
-    backdrop-filter: blur(4px);
-    z-index: 9999 !important;
-    position: fixed;
+/* --- Individual Album Container --- */
+.album-item {
+    /* Matches video-item: 50% width minus half the gap */
+    flex: 0 1 calc(50% - 20px); 
+    margin: 0;
     text-align: center;
 }
 
-#nav-search-input {
-    background-color: #ffffff !important;
-    color: #404040 !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 300 !important;
-    width: 40% !important;
-    height: 32px !important;
-    padding: 0 40px 0 20px !important;
-    border-radius: 20px !important;
-    margin: 25px auto 0 auto !important;
-    display: block !important;
-    border: none !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
-    font-size: 0.95rem !important;
+/* --- Thumbnail Images (Styled like Video Wrapper) --- */
+.album-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+    border-radius: 12px; /* Increased from 8px to match .video-wrapper */
+    /* Updated shadow to match the heavier .video-wrapper shadow */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    transition: transform 0.3s ease-in-out;
 }
 
-#nav-search-input::placeholder {
-    font-family: 'Amatic SC', cursive !important;
-    font-size: 1.1rem !important;
-    color: #BDCDC0 !important;
-    text-transform: uppercase;
+/* Simple hover effect */
+.album-item a:hover img {
+    transform: scale(1.03);
 }
 
-#nav-search-exit,
-#beautifuljekyll-search-close {
-    color: #888 !important;
-    font-size: 1.1rem !important;
-    cursor: pointer;
-    background: none !important;
-    border: none !important;
-    position: absolute !important;
-    top: 33px !important;
-    left: calc(50% + 20% - 30px) !important;
-    z-index: 10001 !important;
-    line-height: 1 !important;
+/* --- Captions --- */
+.album-item figcaption {
+    margin-top: 15px;
+    font-family: sans-serif; /* Matches video-item figcaption */
+    font-weight: bold;       /* Matches video-item figcaption */
+    font-size: 18px;
+    color: #444;
 }
 
-#beautifuljekyll-search-results {
-    max-width: 40% !important;
-    margin: 15px auto !important;
-    list-style: none;
+/* --- Mobile Fix for Phones (Matches Video Grid) --- */
+@media (max-width: 768px) {
+    .album-item {
+        flex: 0 1 100%;
+    }
+}
+
+/* --- Customized Load More Button --- */
+
+.load-more-container {
     text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-#beautifuljekyll-search-results li a {
-    font-family: 'Amatic SC', cursive !important;
-    font-size: 1.4rem !important;
-    color: #ffffff !important;
-    text-decoration: none;
+.btn-load-more {
+  /* Centering & Display */
+  display: inline-block;
+
+  
+  /* Colors - pulled from your site's sage palette */
+  background-color: #5d6d5a; 
+  color: #ffffff;
+  
+  /* Typography */
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  
+  /* Sizing and Shape */
+  padding: 14px 36px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  /* Interaction & Polish */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  outline: none;
 }
 
-/* ==========================================================================
-   5. PHOTO & VIDEO GRIDS
-   ========================================================================== */
+/* Hover State */
+.btn-load-more:hover {
+  background-color: #4a5748;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
 
-.album-grid,
+/* Active State (The click feel) */
+.btn-load-more:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Ensure hidden items are strictly hidden */
+.video-item.hidden-item {
+    display: none !important;
+}
+
+/* Base style for visible items */
+.video-item {
+    display: block; /* The grid handles the layout, but this allows toggle */
+    flex: 0 1 calc(50% - 20px);
+    margin: 0;
+}
+/* Hidden class for items */
+        .hidden-item {
+            display: none !important;
+        }
+
+
 .video-grid {
     display: flex;
     flex-wrap: wrap;
@@ -230,48 +253,38 @@ main .col-lg-10 {
     gap: 40px;
     max-width: 1200px;
     margin: 50px auto;
-    padding: 0 20px;
 }
 
-.album-item,
 .video-item {
     flex: 0 1 calc(50% - 20px);
     margin: 0;
-    text-align: center;
 }
 
-.album-item img,
-.video-wrapper {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-}
-
-.album-item a:hover img {
-    transform: scale(1.03);
-}
-
+/* The 16:9 Aspect Ratio Box */
 .video-wrapper {
     position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
     height: 0;
-    padding-bottom: 56.25%;
     background-color: #000;
+    border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.video-wrapper img,
+/* Thumbnail and Iframe positioning */
+.video-wrapper img, 
 .video-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
+/* The Play Button (Centered Circle) */
 .play-button {
     position: absolute;
     top: 50%;
@@ -286,6 +299,7 @@ main .col-lg-10 {
     z-index: 2;
 }
 
+/* The Play Button Triangle */
 .play-button::after {
     content: "";
     position: absolute;
@@ -298,100 +312,46 @@ main .col-lg-10 {
 }
 
 .video-wrapper:hover .play-button {
-    background-color: #ff0000;
+    background-color: #ff0000; /* YouTube Red on hover */
     border-color: #ff0000;
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-.album-item figcaption,
 .video-item figcaption {
     margin-top: 15px;
+    text-align: center;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 18px;
-    color: #444;
 }
 
-/* ==========================================================================
-   6. SIDEBAR & TABLE OF CONTENTS
-   ========================================================================== */
-
-.photos-page-container {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    margin-top: 30px;
+@media (max-width: 768px) {
+    .video-item { flex: 0 1 100%; }
 }
 
-.toc-sidebar {
-    flex: 0 0 280px;
-    position: sticky;
-    top: 100px;
-    background-color: transparent !important;
-    box-shadow: none !important;
+.page-subheading {
+    font-weight: bold;
 }
 
-.toc-card {
-    background-color: #BDCDC0 !important;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
-}
-
-.toc-title {
-    font-family: 'Amatic SC', cursive !important;
-    font-size: clamp(2rem, 1.5rem + 1.5vw, 5rem) !important;
-    border-bottom: 2px solid #404040;
-    padding-bottom: 10px;
-    color: #404040;
-    text-transform: uppercase;
-}
-
-.toc-list {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 0 0;
-}
-
-.toc-list li,
-.toc-list a {
-    font-family: 'Amatic SC', sans-serif !important;
-    font-weight: bold !important;
-    font-size: clamp(1.2rem, 0.8rem + 1vw, 2.8rem) !important;
-    color: #404040 !important;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.toc-list li:hover,
-.toc-list a:hover,
-.toc-list li.active {
-    color: #ffffff !important;
-    padding-left: 10px;
-    transform: translateX(8px);
-}
-
-/* ==========================================================================
-   7. FOOTER STYLING
-   ========================================================================== */
-
+/* 1. Fluid Typography for Footer Headings (Mail Us, Call Us, etc.) */
 .beautiful-jekyll-footer h3 {
     font-family: 'Poiret One', system-ui, sans-serif !important;
     font-weight: bold !important;
+    /* Using your existing h3 clamp for consistency */
     font-size: clamp(1.25rem, 0.65rem + 1.0vw, 3rem) !important;
     margin-bottom: 1rem;
 }
 
-.beautiful-jekyll-footer p,
+/* 2. Fluid Typography for Footer Body Text (Address, Phone numbers) */
+.beautiful-jekyll-footer p, 
 .beautiful-jekyll-footer div {
     font-family: 'Montserrat' !important;
     font-weight: 300 !important;
+    /* Using your existing body clamp */
     font-size: clamp(0.75rem, 0.25rem + 0.5vw, 2rem) !important;
     line-height: 1.5;
 }
 
+/* 3. Fluid Typography for Copyright Section */
 .copyright.text-muted {
     font-family: 'Poiret One', system-ui, sans-serif !important;
     text-transform: uppercase !important;
@@ -400,6 +360,7 @@ main .col-lg-10 {
     margin-top: 20px;
 }
 
+/* 4. Fluidity for the Footer Links (Email) */
 .beautiful-jekyll-footer a {
     color: inherit;
     text-decoration: underline;
@@ -410,75 +371,631 @@ main .col-lg-10 {
     opacity: 0.8;
 }
 
-/* ==========================================================================
-   8. BUTTONS & MISC
-   ========================================================================== */
+/* 5. Ensure the footer container matches your main content width fluidity */
+.beautiful-jekyll-footer {
+    max-width: 65% !important; /* Matches your main.container-md */
+    width: 65% !important;
+    margin: 0 auto !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+/* Mobile Adjustment: Make footer wider on small screens */
+@media (max-width: 768px) {
+    .beautiful-jekyll-footer {
+        max-width: 90% !important;
+        width: 90% !important;
+    }
+}
+
+/* 1. LAYOUT EXPANSION: FORCE 90% WIDTH */
+main.container-md, 
+.container-md, 
+.container-lg,
+.beautiful-jekyll-footer,
+.intro-header .container-md {
+    max-width: 90% !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+}
+
+/* --- 3. TABLE OF CONTENTS (STYLING) --- */
+.toc-card {
+    /* ADD THE SAGE COLOR HERE */
+    background-color: #BDCDC0 !important; 
+    padding: 25px;
+    border-radius: 12px;
+    border: none;
+    /* ADD THE SHADOW HERE */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; 
+}
+
+.toc-title {
+    font-family: 'Amatic Sc', cursive !important;
+    margin-top: 0;
+    color: #404040 !important; /* Black text */
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    font-size: clamp(2rem, 1.5rem + 1.5vw, 5rem) !important;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.toc-list li {
+    margin-bottom: 12px;
+}
+
+.toc-list a {
+    font-family: 'Amatic SC', sans-serif !important;
+    font-weight: bold !important;
+    font-size: clamp(1.2rem, 0.8rem + 1vw, 2.8rem) !important;
+    color: #404040 !important; /* Black text */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.toc-list a:hover {
+    color: #ffffff !important; /* Switches to white on hover for visibility */
+    transform: translateX(8px);
+}/* 3. POST IMAGES (LARGER & FLEXIBLE) */
+.post-entry-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.post-image {
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.post-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+/* 4. DESKTOP STICKY & PROPORTIONS */
+@media (min-width: 992px) {
+    .newsletter-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5%;
+    }
+
+    .toc-sidebar {
+        flex: 0 0 20%;
+        position: sticky;
+        top: 40px;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .posts-list {
+        flex: 0 0 75%;
+    }
+
+    .post-entry-container {
+        flex-direction: row;
+    }
+
+    .post-image {
+        flex: 0 0 40%;
+    }
+}
+
+/* 5. SMOOTH SCROLL & CATEGORY HEADINGS */
+html {
+    scroll-behavior: smooth;
+}
+
+.category-heading {
+    font-family: 'Amatic SC', sans-serif !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    font-size: clamp(1.75rem, 1.25rem + 2.73vw, 7rem) !important;
+    border-bottom: 2px solid #735362;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    color: #404040;
+    scroll-margin-top: 80px;
+}
+
+.back-to-top a {
+    font-family: 'Poiret One', system-ui, sans-serif !important;
+    font-size: 1.5rem;
+    color: #735362;
+    text-decoration: none;
+}
+
+.back-navigation {
+    margin-top: 150px;
+}
+
+.video-caption a { color: #008aff; text-decoration: underline; }
+
+/* 1. Fluid Site Name (Sahyadri Connect) */
+.navbar-brand {
+    /* Slightly larger: scaling from ~24px to ~32px */
+    font-size: clamp(1rem, 1vw + 0.8rem, 1.3rem) !important;
+    font-weight: 500; 
+}
+
+/* 2. Fluid Navbar Links (ACTIVITIES, KRISHNAMURTI, etc.) */
+.navbar-custom .nav-link{
+    /* Slightly larger: scaling from ~16px to ~20px */
+    font-size: clamp(0.8rem, 0.25vw + 0.75rem, 1.1rem) !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+ .navbar-custom . nav-link dropdown-toggle  {
+     font-size: clamp(0.9rem, 0.25vw + 0.75rem, 1.15rem) !important;
+    padding-top: 10px;
+    padding-bottom: 10px
+ }
+
+/* 3. Dropdown Toggle Alignment (The arrows next to text) */
+.dropdown-toggle::after {
+    vertical-align: middle;
+}
+
+/* --- Search Overlay Styling --- */
+
+/* The full-screen background when search is active */
+#search-overlay {
+    background-color: rgba(102, 133, 113, 0.95) !important; /* Matches your navbar-col (#668571) */
+}
+
+/* The search input box */
+#search-input {
+    background-color: #FFFFFF !important;
+    color: #3E3830 !important; /* Matches your text-col */
+    border: 2px solid #BBC4B4 !important; /* Matches your navbar-border-col */
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Results list styling */
+/* 1. Corrected Search Overlay Background */
+/* --- Optimized Search Overlay (Integrated) --- */
+
+
+/* 1. Backdrop - Extra Transparent (0.3) */
+#beautifuljekyll-search-overlay {
+    background-color: rgba(93, 109, 90, 0.3) !important; 
+    backdrop-filter: blur(4px);
+    z-index: 9999 !important;
+    position: fixed;
+    text-align: center;
+}
+
+/* 2. The Thinner Search Bar */
+#nav-search-input {
+    background-color: #ffffff !important;
+    color: #404040 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 300 !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    
+    /* Dimensions */
+    width: 40% !important; 
+    height: 32px !important; 
+    padding: 0 40px 0 20px !important; 
+    border-radius: 20px !important; 
+    
+    /* Position */
+    margin: 25px auto 0 auto !important; 
+    display: block !important;
+    font-size: 0.95rem !important;
+}
+
+/* 3. Placeholder Styling */
+#nav-search-input::placeholder {
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 1.1rem !important; 
+    color: #BDCDC0 !important;
+    text-transform: uppercase;
+}
+
+/* 4. The Exit Button - Perfectly Centered Vertically */
+#nav-search-exit, 
+#beautifuljekyll-search-close {
+    color: #888 !important;
+    font-size: 1.1rem !important;
+    cursor: pointer;
+    background: none !important;
+    border: none !important;
+    
+    position: absolute !important;
+    
+    /* Vertical Adjustment: Matches bar margin + half height adjustment */
+    top: 33px !important; 
+    
+    /* Horizontal Adjustment: Center (50%) + half bar width (20%) - nudge (30px) */
+    left: calc(50% + 20% - 30px) !important;
+    
+    z-index: 10001 !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+
+#nav-search-exit:hover {
+    color: #404040 !important;
+}
+
+/* 5. Mobile Adjustments */
+@media (max-width: 768px) {
+    #nav-search-input {
+        width: 85% !important;
+        margin-top: 20px !important;
+    }
+    #nav-search-exit, 
+    #beautifuljekyll-search-close {
+        left: calc(50% + 42.5% - 30px) !important;
+        top: 28px !important;
+    }
+}
+
+/* 6. Results List */
+#beautifuljekyll-search-results {
+    max-width: 40% !important;
+    margin: 15px auto !important;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#beautifuljekyll-search-results li a {
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 1.4rem !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+
+/* Enable hover dropdowns for desktop screens */
+@media only screen and (min-width: 992px) {
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    display: block !important;
+    margin-top: 0 !important; /* Remove gap so mouse doesn't leave the trigger area */
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Optional: Smooth fade-in effect */
+  .dropdown-menu {
+    display: block !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+  }
+}
+
+
+ .pdf-grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .ninad-card {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    background-color: white; /* Card background is still white */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    overflow: hidden; 
+  }
+
+  .ninad-card:hover {
+    transform: translateY(-8px);
+  }
+
+  /* Updated caption styling */
+  .ninad-caption-banner {
+    /* Changed to very slight greenish-white and moved caption down */
+    background-color: #f7fff7; 
+    color: #333; /* Use a darker text for contrast on light background */
+    padding: 12px 5px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+    /* Important: Changed order to 1 to move below image */
+    order: 1; 
+    /* Add space between picture and caption */
+    margin-top: 15px; 
+    border-top: 1px solid #e0e0e0; /* Optional: subtle line separator */
+  }
+
+  /* Ensures thumbnails are uniform and removes order style */
+  .ninad-card img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+    display: block;
+  }
+
+/* --- Responsive Rules --- */
+
+/* Tablets (3 per row) */
+@media (max-width: 992px) {
+  .pdf-container {
+    flex: 0 0 calc(33.33% - 17px);
+  }
+}
+
+/* Mobile Phones (2 per row) */
+@media (max-width: 768px) {
+  .pdf-grid-container {
+    gap: 15px;
+  }
+  .pdf-container {
+    flex: 0 0 calc(50% - 8px);
+    margin-bottom: 15px;
+  }
+  .pdf-btn-primary {
+    font-size: 10px;
+    padding: 8px 2px;
+    margin: 5px 4px 4px 4px;
+  }
+  .pdf-img {
+    margin-bottom: 10px; /* Smaller gap for smaller screens */
+  }
+}
+
+/* --- Academic Year TOC (Albums) --- */
+.academic-toc {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.year-album-card {
+    width: 180px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.year-album-card:hover {
+    transform: translateY(-5px);
+}
+
+.year-album-card .thumb-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #f7faf8; /* Slight greenish white */
+    border: 2px solid #6d8571;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.year-album-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.year-album-card.active img {
+    opacity: 1;
+}
+
+.year-album-card.active .thumb-wrapper {
+    outline: 3px solid #6d8571;
+    box-shadow: 0 4px 15px rgba(109, 133, 113, 0.4);
+}
+
+.year-album-card p {
+    margin-top: 10px;
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    color: #404040;
+}
+
+/* Hidden state for filtered items */
+.album-item.hidden-item {
+    display: none !important;
+}
+
+/* --- 1. GLOBAL TYPOGRAPHY & FLUID SIZING --- */
+body, p, div {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 300 !important;
+    font-size: clamp(1rem, 0.5rem + 0.68vw, 2.5rem);
+    color: #404040;
+}
+
+h1, .term-title, .post-title {
+    font-family: 'Amatic SC', cursive !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+}
+
+h1 { font-size: clamp(2.5rem, 2.5rem + 2.73vw, 8rem) !important; }
+h2 { font-size: clamp(1rem, 0.75rem + 2.25vw, 4rem) !important; }
+h3 { font-family: 'Montserrat' !important; font-weight: 300 !important; }
+
+/* --- 2. LAYOUT: FULL WIDTH HEADER & 90% BODY --- */
+/* Force header containers to 1200px and main content/footer to 90% */
+.intro-header .container, 
+.intro-header .container-md, 
+.intro-header .container-lg {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+main.container-md, 
+.container-md, 
+.container-lg,
+.beautiful-jekyll-footer {
+    max-width: 90% !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+}
+
+/* --- 3. THE PHOTOS PAGE CONTAINER (Sidebar + Grid) --- */
+.photos-page-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+/* --- 4. NEWSLETTER-STYLE SIDEBAR (TOC) --- */
+.toc-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 100px;
+    /* CHANGE THIS LINE TO TRANSPARENT */
+    background-color: transparent !important; 
+    padding: 0; 
+    /* REMOVE THE SHADOW FROM HERE */
+    box-shadow: none !important; 
+}
+
+.toc-card h2.toc-title {
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 2.8rem !important;
+    margin: 0 0 15px 0;
+    border-bottom: 2px solid #404040;
+    padding-bottom: 10px;
+    color: #404040;
+    text-transform: uppercase;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list li {
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 1.8rem !important;
+    cursor: pointer;
+    color: #404040;
+    transition: all 0.3s ease;
+}
+
+
+
+.toc-list li:hover, 
+.toc-list li.active {
+    color: #ffffff; /* White text on hover/active for better contrast */
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+/* --- 5. PHOTO CONTENT & ALBUM GRID --- */
+.photos-content {
+    flex: 1;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.album-item {
+    margin: 0;
+    text-align: center;
+}
+
+.album-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.album-item a:hover img {
+    transform: scale(1.03);
+}
+
+.album-item figcaption {
+    margin-top: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #404040;
+}
+
+/* --- 6. FUNCTIONAL CLASSES --- */
+.hidden-item {
+    display: none !important;
+}
+
+/* --- 7. BUTTONS --- */
+.load-more-container {
+    text-align: center;
+    margin: 40px 0;
+}
 
 .btn-load-more {
-    display: inline-block;
     background-color: #5d6d5a;
     color: #ffffff;
-    font-family: inherit;
-    font-weight: 500;
+    font-family: 'Amatic SC', cursive;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    padding: 14px 36px;
+    font-size: 1.2rem;
+    padding: 12px 36px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .btn-load-more:hover {
     background-color: #4a5748;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.hidden-item {
-    display: none !important;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* ==========================================================================
-   9. MOBILE RESPONSIVENESS
-   ========================================================================== */
-
+/* --- 8. MOBILE RESPONSIVENESS --- */
 @media (max-width: 992px) {
+    .photos-page-container {
+        flex-direction: column;
+    }
     .toc-sidebar {
         position: relative;
         top: 0;
         width: 100%;
         margin-bottom: 30px;
     }
-    
-    .photos-page-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .album-item,
-    .video-item {
-        flex: 0 1 100%;
-    }
-
-    .beautiful-jekyll-footer {
-        max-width: 90% !important;
-        width: 90% !important;
-    }
-
-    #nav-search-input {
-        width: 85% !important;
-    }
-
-    #nav-search-exit {
-        left: calc(50% + 42.5% - 30px) !important;
+    main.container-md, .beautiful-jekyll-footer {
+        max-width: 95% !important;
+        width: 95% !important;
     }
 }
