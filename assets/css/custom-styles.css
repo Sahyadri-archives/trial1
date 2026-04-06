@@ -527,20 +527,20 @@ html {
 /* 1. Fluid Site Name (Sahyadri Connect) */
 .navbar-brand {
     /* Slightly larger: scaling from ~24px to ~32px */
-    font-size: clamp(1rem, 1vw + 0.8rem, 1.75rem) !important;
+    font-size: clamp(1rem, 1vw + 0.8rem, 1.5rem) !important;
     font-weight: 500; 
 }
 
 /* 2. Fluid Navbar Links (ACTIVITIES, KRISHNAMURTI, etc.) */
 .navbar-custom .nav-link{
     /* Slightly larger: scaling from ~16px to ~20px */
-    font-size: clamp(0.8rem, 0.75vw + 0.75rem, 1.4rem) !important;
+    font-size: clamp(0.8rem, 0.75vw + 0.75rem, 1.1rem) !important;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
  .navbar-custom . nav-link dropdown-toggle  {
-     font-size: clamp(0.9rem, 0.75vw + 0.75rem, 1.5rem) !important;
+     font-size: clamp(0.9rem, 0.75vw + 0.75rem, 1.25rem) !important;
     padding-top: 10px;
     padding-bottom: 10px
  }
