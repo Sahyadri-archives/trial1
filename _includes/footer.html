@@ -1,41 +1,56 @@
-<footer>
+<footer class="beautiful-jekyll-footer-wrapper">
   <div class="container-md beautiful-jekyll-footer">
+    
     <div class="row contact-info-section text-center text-md-left mb-4">
-      <div class="col-md-4 mb-3">
+      
+      <div class="col-md-4 mb-4">
         <h3 class="footer-heading">Mail Us</h3>
-        <p><strong>Address:</strong><br>
-        Sahyadri School<br>
-        Krishnamurti Foundation India<br>
-        Post : Tiwai Hill, Tal : Rajgurunagar (Khed),<br>
-        Dist : Pune, Pin – 410513, Maharashtra, India</p>
+        <p class="footer-body">
+          <strong>Address:</strong><br>
+          Sahyadri School<br>
+          Krishnamurti Foundation India<br>
+          Post : Tiwai Hill, Tal : Rajgurunagar (Khed),<br>
+          Dist : Pune, Pin – 410513, Maharashtra, India
+        </p>
       </div>
 
-      <div class="col-md-5 mb-3">
+      <div class="col-md-4 mb-4">
         <h3 class="footer-heading">Call Us</h3>
-        <p><strong>Telephone:</strong><br>
-        +91 9422304265 / +91 9422304267<br>
-        +91 9422304276 / +91 9422308583</p>
+        <p class="footer-body">
+          <strong>Telephone:</strong><br>
+          +91 9422304265 / +91 9422304267<br>
+          +91 9422304276 / +91 9422308583
+        </p>
       </div>
 
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-4">
         <h3 class="footer-heading">Email Us</h3>
-        <p><strong>Email:</strong><br>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=office@sahyadrischool.org" target="_blank">
-  office@sahyadrischool.org
-</a></p>
-<div class="col-md-4 mb-3">
-<p class="footer">
-    <strong>Note:<br></strong>This site was created by the Class 11 students (2025–26) while serving on the Student Council's IT Committee along with Bhau Sir, IT Department.</p>
-</div>
+        <p class="footer-body">
+          <strong>Email:</strong><br>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=office@sahyadrischool.org" target="_blank" class="footer-link">
+            office@sahyadrischool.org
+          </a>
+        </p>
+        
+        <div class="student-credit-box mt-3">
+          <p class="footer-note">
+            <strong>Note:</strong><br>
+            This site was created by the Class 11 students (2025–26) while serving on the Student Council's IT Committee along with Bhau Sir, IT Department.
+          </p>
+        </div>
       </div>
+      
     </div>
 
-    <hr>
+    <hr class="footer-divider">
 
     <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 text-center">
-        {% include social-networks-links.html %}
+      <div class="col-12 text-center">
         
+        <div class="social-links-container mb-3">
+          {% include social-networks-links.html %}
+        </div>
+
         {% if page.footer-extra %}
           <div class="footer-custom-content">
             {% for file in page.footer-extra %}
@@ -45,8 +60,7 @@
         {% endif %}
 
         <p class="copyright text-muted">
-          {% if site.author %}{{ site.author }} &nbsp;&bull;&nbsp; {% endif %}
-          {{ site.time | date: '%Y' }}
+          SAHYADRI &nbsp;&bull;&nbsp; {{ site.time | date: '%Y' }}
           {% if site.url-pretty %}
             &nbsp;&bull;&nbsp;
             <span class="author-site">
@@ -55,7 +69,7 @@
           {% endif %}
         </p>
 
-        <p class="copyright text-muted">
+        <p class="design-credits text-muted">
           Made by Sailesh Mucheli, Designed by Riddhim Inamke
         </p>
         
