@@ -479,6 +479,7 @@ main.container-md,
         top: 2vw;
         max-height: calc(100vh - 80px);
         overflow-y: auto;
+        margin-top: 2vw !important;
     }
 
     .posts-list {
