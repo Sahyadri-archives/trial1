@@ -3,7 +3,7 @@ layout: profile
 title: "Dr. Alex Chen"
 subtitle: "Lead Robotics Engineer & AI Researcher"
 date: 2026-06-01
-profile-image: "https://lh3.googleusercontent.com/u/0/d/1A2b3C4d5E6f7G8h9I0jK1lM2nO3pQ4rS"
+profile-image: "https://lh3.googleusercontent.com/u/0/d/1toLonw7qHduW-7QmIe1-oqeHh7BWxrIq"
 ---
 
 ### About Me
