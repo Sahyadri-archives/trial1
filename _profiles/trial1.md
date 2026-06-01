@@ -3,6 +3,7 @@ layout: profile
 title: "Dr. Alex Chen"
 subtitle: "Lead Robotics Engineer & AI Researcher"
 date: 2026-06-01
+academic-year: "2026-27"
 profile-image: "https://lh3.googleusercontent.com/u/0/d/1toLonw7qHduW-7QmIe1-oqeHh7BWxrIq"
 ---
 
