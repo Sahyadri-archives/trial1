@@ -85,16 +85,4 @@ layout: base
       {% include comments.html %}
     </div>
   </div>
-
-  <script>
-function goBack() {
-  // If there is history to go back to, do it
-  if (document.referrer !== "") {
-    window.history.back();
-  } else {
-    // Optional: Fallback to your home or blog page if no history exists
-    window.location.href = "{{ '/' | relative_url }}";
-  }
-}
-</script>
 </main>
