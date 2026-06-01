@@ -195,21 +195,24 @@ subtitle: Select a profile to view more details
 <body>
     <div class="profiles-page-container">
         
+        <!-- Modified Sidebar: Newest Year Moved to Top -->
         <aside class="toc-sidebar">
             <nav class="toc-card">
                 <h2 class="toc-title">Academic Years</h2>
                 <ul class="toc-list" id="year-toc">
-                    <li class="active" onclick="filterAcademicYear('2025-26', this)">2025-26</li>
-                    <li onclick="filterAcademicYear('2026-27', this)">2026-27</li>
+                    <li class="active" onclick="filterAcademicYear('2026-27', this)">2026-27</li>
+                    <li onclick="filterAcademicYear('2025-26', this)">2025-26</li>
                 </ul>
             </nav>
         </aside>
 
+        <!-- Profile Grid Content -->
         <div class="profiles-content">
             <div class="profile-grid" id="main-grid">
 
                 {% for profile in site.profiles %}
-                <a href="{{ profile.url | relative_url }}" class="profile-card" data-academic-year="{{ profile.academic-year | default: '2025-26' }}">
+                <!-- Defaults missing metadata profiles safely to '2026-27' to match default visibility rules -->
+                <a href="{{ profile.url | relative_url }}" class="profile-card" data-academic-year="{{ profile.academic-year | default: '2026-27' }}">
                     <div class="profile-img-wrapper">
                         {% if profile.profile-image %}
                             <img src="{{ profile.profile-image }}" alt="{{ profile.title }}">
@@ -232,9 +235,11 @@ subtitle: Select a profile to view more details
         </div>
     </div>
 
+    <!-- Layout Logic Script -->
     <script>
         const itemsPerPage = 9;
-        let currentYearFilter = '2025-26';
+        // Modified initial view target variable to match new top option
+        let currentYearFilter = '2026-27';
 
         function filterAcademicYear(year, element) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -276,8 +281,9 @@ subtitle: Select a profile to view more details
             }
         }
 
+        // Updated global event loader listener parameter to point target straight to '2026-27' 
         document.addEventListener("DOMContentLoaded", function() {
-            filterAcademicYear('2025-26', document.querySelector('.toc-list li.active'));
+            filterAcademicYear('2026-27', document.querySelector('.toc-list li.active'));
         });
     </script>
 </body>
