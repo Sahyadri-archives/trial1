@@ -2,7 +2,7 @@
 layout: profile
 title: "Nitin Sharma"
 subtitle: "Valedictorian / Class Representative"
-profile-image: "https://lh3.googleusercontent.com/d/YOUR_IMAGE_ID_HERE"
+profile-image: "https://lh3.googleusercontent.com/d/1sMeY3w3PlAoSsJrmIbyKBhtgal-PCAYX"
 academic-year: "2026-27"
 date: 2026-06-01
 ---
