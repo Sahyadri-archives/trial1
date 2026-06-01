@@ -25,10 +25,10 @@ layout: base
 
         <div class="col-9 col-md-10">
           <!-- Added clean CSS class overrides for typography reduction -->
-          <h1 class="profile-name mb-1">{{ page.title }}</h1>
+          <h3 class="post-title mb-1">{{ page.title }}</h1>
           
           {% if page.subtitle %}
-            <h2 class="profile-subheading text-muted fw-normal mb-2">
+            <h4 class="post-subtitle text-muted fw-normal mb-2">
               {{ page.subtitle }}
             </h2>
           {% endif %}
@@ -61,12 +61,12 @@ layout: base
 
 /* Reduced heading size by 50% (Standard H1 is ~2.5rem) */
 .profile-name {
-  font-size: 1.25rem !important;
+  font-size: 1.75rem !important;
   font-weight: bold;
 }
 
 /* Reduced subheading size by 50% (Standard H4 is ~1.5rem) */
 .profile-subheading {
-  font-size: 0.75rem !important;
+  font-size: 1rem !important;
 }
 </style>
