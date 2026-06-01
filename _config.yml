@@ -151,6 +151,10 @@ plugins:
   - jekyll-sitemap
 
 collections:
+  posts:
+    output: true
+    permalink: /posts/:title
+
   activities:
     output: true
     permalink: /activities/:title/
