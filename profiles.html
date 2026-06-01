@@ -209,7 +209,7 @@ subtitle: Select a profile to view more details
         <!-- Dynamic Sidebar System -->
         <aside class="toc-sidebar">
             <nav class="toc-card">
-                <h2 class="toc-title">Academic Years</h2>
+                <h2 class="toc-title">Academic Year</h2>
                 <ul class="toc-list" id="year-toc">
                     {% for yr in unique_years %}
                         <li {% if yr == latest_year %}class="active"{% endif %} onclick="filterAcademicYear('{{ yr }}', this)">
