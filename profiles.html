@@ -124,7 +124,7 @@ subtitle: Select a profile to view more details
         }
 
         .profile-card .profile-name {
-            font-size: 1.4rem !important;
+            font-size: 0.75rem !important;
             font-weight: bold;
             text-align: center;
             margin: 4px 0 2px 0;
@@ -132,7 +132,7 @@ subtitle: Select a profile to view more details
         }
 
         .profile-card .profile-role {
-            font-size: 1rem !important;
+            font-size: 0.55rem !important;
             text-align: center;
             color: #707070;
             white-space: normal;
@@ -193,15 +193,29 @@ subtitle: Select a profile to view more details
 </head>
 
 <body>
+    <!-- LIQUID LOGIC: Extract unique years from profiles and sort them descending -->
+    {% assign raw_years = "" %}
+    {% for profile in site.profiles %}
+        {% if profile.academic-year %}
+            {% assign raw_years = raw_years | append: profile.academic-year | append: "," %}
+        {% endif %}
+    {% endfor %}
+    
+    {% assign unique_years = raw_years | split: "," | uniq | sort | reverse %}
+    {% assign latest_year = unique_years | first %}
+
     <div class="profiles-page-container">
         
-        <!-- Modified Sidebar: Newest Year Moved to Top -->
+        <!-- Dynamic Sidebar System -->
         <aside class="toc-sidebar">
             <nav class="toc-card">
                 <h2 class="toc-title">Academic Years</h2>
                 <ul class="toc-list" id="year-toc">
-                    <li class="active" onclick="filterAcademicYear('2026-27', this)">2026-27</li>
-                    <li onclick="filterAcademicYear('2025-26', this)">2025-26</li>
+                    {% for yr in unique_years %}
+                        <li {% if yr == latest_year %}class="active"{% endif %} onclick="filterAcademicYear('{{ yr }}', this)">
+                            {{ yr }}
+                        </li>
+                    {% endfor %}
                 </ul>
             </nav>
         </aside>
@@ -211,8 +225,7 @@ subtitle: Select a profile to view more details
             <div class="profile-grid" id="main-grid">
 
                 {% for profile in site.profiles %}
-                <!-- Defaults missing metadata profiles safely to '2026-27' to match default visibility rules -->
-                <a href="{{ profile.url | relative_url }}" class="profile-card" data-academic-year="{{ profile.academic-year | default: '2026-27' }}">
+                <a href="{{ profile.url | relative_url }}" class="profile-card" data-academic-year="{{ profile.academic-year }}">
                     <div class="profile-img-wrapper">
                         {% if profile.profile-image %}
                             <img src="{{ profile.profile-image }}" alt="{{ profile.title }}">
@@ -238,8 +251,8 @@ subtitle: Select a profile to view more details
     <!-- Layout Logic Script -->
     <script>
         const itemsPerPage = 9;
-        // Modified initial view target variable to match new top option
-        let currentYearFilter = '2026-27';
+        // Seed default starting filter view directly from our dynamic Liquid calculation
+        let currentYearFilter = "{{ latest_year }}";
 
         function filterAcademicYear(year, element) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -247,15 +260,13 @@ subtitle: Select a profile to view more details
             currentYearFilter = year;
             const allItems = Array.from(document.querySelectorAll('.profile-card'));
 
-            // Toggle active styling states
             document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
             if(element) element.classList.add('active');
 
-            // Hide grid systems out of bounds
             allItems.forEach(item => item.classList.add('hidden-item'));
 
             const matched = allItems.filter(item => 
-                year === 'all' || item.getAttribute('data-academic-year') === year
+                item.getAttribute('data-academic-year') === year
             );
 
             matched.slice(0, itemsPerPage).forEach(item => {
@@ -281,9 +292,12 @@ subtitle: Select a profile to view more details
             }
         }
 
-        // Updated global event loader listener parameter to point target straight to '2026-27' 
         document.addEventListener("DOMContentLoaded", function() {
-            filterAcademicYear('2026-27', document.querySelector('.toc-list li.active'));
+            // Automatically target whatever element holds our active dynamic default state
+            const initialActiveTab = document.querySelector('.toc-list li.active');
+            if (initialActiveTab) {
+                filterAcademicYear(currentYearFilter, initialActiveTab);
+            }
         });
     </script>
 </body>
