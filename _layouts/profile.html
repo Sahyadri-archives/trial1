@@ -1,0 +1,50 @@
+---
+layout: base
+---
+
+<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+  <div class="row">
+    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+
+      <div class="back-navigation mb-4">
+        <a href="/profiles" id="back-button">
+          <i class="fas fa-chevron-left"></i> 
+          Back
+        </a>
+      </div>
+
+      <div class="profile-header row align-items-center mb-4">
+        
+        <div class="col-3 col-md-2 text-center text-md-start">
+          {% if page.profile-image %}
+            <img src="{{ page.profile-image | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded-circle profile-pic">
+          {% else %}
+            <img src="/assets/img/default-avatar.png" alt="Default Avatar" class="img-fluid rounded-circle profile-pic">
+          {% endif %}
+        </div>
+
+        <div class="col-9 col-md-10">
+          <h1 class="profile-name mb-1">{{ page.title }}</h1>
+          
+          {% if page.subtitle %}
+            <h2 class="profile-subheading text-muted h4 fw-normal mb-2">
+              {{ page.subtitle }}
+            </h2>
+          {% endif %}
+          
+          <span class="profile-meta text-muted small">
+            Last updated on {{ page.date | date: "%B %-d, %Y" }}
+          </span>
+        </div>
+        
+      </div>
+
+      <hr class="my-4">
+
+      <div class="profile-content">
+        {{ content }}
+      </div>
+
+    </div>
+  </div>
+</main>
