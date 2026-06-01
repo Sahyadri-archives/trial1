@@ -115,9 +115,17 @@ defaults:
       path: ""
       type: "activities" # Settings for the _activities folder
     values:
-      layout: "post"
+      layout: "events"
       comments: true
       social-share: true
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+       layout: "profile"
+       comments: true
+       social-share: true
   -
     scope:
       path: "" # Default for regular pages (index.md, etc.)
@@ -146,4 +154,8 @@ collections:
   activities:
     output: true
     permalink: /activities/:title/
+
+  profiles:
+    output: true
+    permalink: /profiles/:title/
  
