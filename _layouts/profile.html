@@ -24,10 +24,11 @@ layout: base
         </div>
 
         <div class="col-9 col-md-10">
+          <!-- Added clean CSS class overrides for typography reduction -->
           <h1 class="profile-name mb-1">{{ page.title }}</h1>
           
           {% if page.subtitle %}
-            <h2 class="profile-subheading text-muted h4 fw-normal mb-2">
+            <h2 class="profile-subheading text-muted fw-normal mb-2">
               {{ page.subtitle }}
             </h2>
           {% endif %}
@@ -48,3 +49,24 @@ layout: base
     </div>
   </div>
 </main>
+
+<style>
+/* Keeps your avatar structure sound and clean */
+.profile-pic {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  max-width: 120px;
+}
+
+/* Reduced heading size by 50% (Standard H1 is ~2.5rem) */
+.profile-name {
+  font-size: 1.25rem !important;
+  font-weight: bold;
+}
+
+/* Reduced subheading size by 50% (Standard H4 is ~1.5rem) */
+.profile-subheading {
+  font-size: 0.75rem !important;
+}
+</style>
