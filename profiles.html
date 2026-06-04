@@ -28,7 +28,8 @@ subtitle: Select a profile to view more details
             gap: 3%;
             width: 100%;
             max-width: 1400px;
-            margin: 30px auto;
+            /* CHANGED: Top margin configured strictly to 0.5vw relative to top navigation bar */
+            margin: 0.5vw auto 30px auto; 
             padding: 0 2% !important;
         }
 
@@ -144,6 +145,8 @@ subtitle: Select a profile to view more details
                 flex-direction: column;
                 align-items: center;
                 gap: 20px;
+                /* Maintains layout padding standard across responsive shifts */
+                margin-top: 0.5vw; 
             }
 
             .toc-sidebar {
@@ -193,7 +196,6 @@ subtitle: Select a profile to view more details
 </head>
 
 <body>
-    <!-- LIQUID LOGIC: Extract unique years from profiles and sort them descending -->
     {% assign raw_years = "" %}
     {% for profile in site.profiles %}
         {% if profile.academic-year %}
@@ -206,7 +208,6 @@ subtitle: Select a profile to view more details
 
     <div class="profiles-page-container">
         
-        <!-- Dynamic Sidebar System -->
         <aside class="toc-sidebar">
             <nav class="toc-card">
                 <h2 class="toc-title">Academic Year</h2>
@@ -220,11 +221,12 @@ subtitle: Select a profile to view more details
             </nav>
         </aside>
 
-        <!-- Profile Grid Content -->
         <div class="profiles-content">
             <div class="profile-grid" id="main-grid">
 
-                {% for profile in site.profiles %}
+                {% assign sorted_profiles = site.profiles | sort: "last_modified_at" | reverse %}
+
+                {% for profile in sorted_profiles %}
                 <a href="{{ profile.url | relative_url }}" class="profile-card" data-academic-year="{{ profile.academic-year }}">
                     <div class="profile-img-wrapper">
                         {% if profile.profile-image %}
@@ -248,10 +250,8 @@ subtitle: Select a profile to view more details
         </div>
     </div>
 
-    <!-- Layout Logic Script -->
     <script>
         const itemsPerPage = 9;
-        // Seed default starting filter view directly from our dynamic Liquid calculation
         let currentYearFilter = "{{ latest_year }}";
 
         function filterAcademicYear(year, element) {
@@ -293,7 +293,6 @@ subtitle: Select a profile to view more details
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Automatically target whatever element holds our active dynamic default state
             const initialActiveTab = document.querySelector('.toc-list li.active');
             if (initialActiveTab) {
                 filterAcademicYear(currentYearFilter, initialActiveTab);
