@@ -71,7 +71,13 @@ academic_start_year: 2025
           {% assign post_date = post.date | date: "%Y-%m-%d" %}
           {% if post_date >= academic_start_date and post_date <= academic_end_date %}
             {% assign current_group_count = current_group_count | plus: 1 %}
-            {% include post.html %}
+            
+            <article class="post-preview pinned">
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="pin-badge">📌 Pinned</span></h3>
+              <small>{{ post.date | date: "%B %d, %Y" }}</small>
+              <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            </article>
+
           {% endif %}
         {% endfor %}
 
@@ -80,7 +86,13 @@ academic_start_year: 2025
           {% assign post_date = post.date | date: "%Y-%m-%d" %}
           {% if post_date >= academic_start_date and post_date <= academic_end_date %}
             {% assign current_group_count = current_group_count | plus: 1 %}
-            {% include post.html %}
+            
+            <article class="post-preview">
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              <small>{{ post.date | date: "%B %d, %Y" }}</small>
+              <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            </article>
+
           {% endif %}
         {% endfor %}
       {% endcapture %}
