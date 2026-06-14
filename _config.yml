@@ -11,10 +11,13 @@ author: Sahyadri
 
 navbar-links:
   Activities: "activities"
+    #- Year 2025-26: "act25"
+    #- Year 2026-27: "act26"
   Krishnamurti:
-    - Spring Term 2025-26: "spr25"
-    - Monsoon Term 2025-26: "mon25"
+    - Academic Year 2025-26: "25-26"
   Newsletter: "posts"
+    #- Year 2025-26: "posts25"
+    #- Year 2026-27: "posts26"
   Resources:
     - Photos: "photos"
     - Videos: "videos"
