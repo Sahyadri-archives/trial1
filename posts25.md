@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Newsletter - Academic Year 2025-2026"
+title: "Newsletter"
+permalink: /posts/
 academic_start_year: 2025 
 ---
 
@@ -53,50 +54,64 @@ academic_start_year: 2025
     {% for group in grouped_posts %}
       
       {% comment %} 
-        Instead of creating arrays via 'concat', we map group items directly using 
-        Liquid's native filters to split pinned vs unpinned posts.
+        1. Filter out the pinned posts
+        2. Filter out the unpinned posts (remaining ones)
+        3. Concatenate them so Pinned is always first
       {% endcomment %}
-      {% assign group_pinned = group.items | where: "pinned", true %}
-      {% assign group_normal = group.items | where_exp: "item", "item.pinned != true" %}
+      {% assign pinned_posts = group.items | where: "pinned", true %}
+      {% assign normal_posts = group.items | where_exp: "item", "item.pinned != true" %}
+      {% assign sorted_posts = pinned_posts | concat: normal_posts %}
       
       {% comment %} 
-        Count how many posts in this group actually fit the target academic window
+        Generate post preview outputs while ensuring they fall into the academic window
       {% endcomment %}
       {% assign current_group_count = 0 %}
       
       {% capture group_output %}
-        {% comment %} First loop: Pinned Posts {% endcomment %}
-        {% for post in group_pinned %}
+        {% for post in sorted_posts %}
           {% assign post_date = post.date | date: "%Y-%m-%d" %}
           {% if post_date >= academic_start_date and post_date <= academic_end_date %}
             {% assign current_group_count = current_group_count | plus: 1 %}
             
-            <article class="post-preview pinned">
-              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="pin-badge">📌 Pinned</span></h3>
-              <small>{{ post.date | date: "%B %d, %Y" }}</small>
-              <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <article class="post-preview{% if post.pinned %} pinned{% endif %}">
+              <a href="{{ post.url | relative_url }}" style="text-decoration: none;">
+                <h3 class="post-title">
+                  {{ post.title }}
+                  {% if post.pinned %}
+                    <span class="pin-badge" style="font-size: 0.8em; margin-left: 8px;">📌 Pinned</span>
+                  {% endif %}
+                </h3>
+                {% if post.subtitle %}
+                  <h4 class="post-subtitle">
+                    {{ post.subtitle }}
+                  </h4>
+                {% endif %}
+              </a>
+
+              <p class="post-meta">
+                Posted on {{ post.date | date: site.date_format | default: "%B %d, %Y" }}
+              </p>
+
+              <div class="post-entry-container">
+                {% if post.image %}
+                  <div class="post-image">
+                    <a href="{{ post.url | relative_url }}">
+                      <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                    </a>
+                  </div>
+                {% endif %}
+                
+                <div class="post-entry">
+                  {{ post.excerpt | strip_html | truncatewords: 30 }}
+                  <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
+                </div>
+              </div>
             </article>
-
-          {% endif %}
-        {% endfor %}
-
-        {% comment %} Second loop: Normal Posts {% endcomment %}
-        {% for post in group_normal %}
-          {% assign post_date = post.date | date: "%Y-%m-%d" %}
-          {% if post_date >= academic_start_date and post_date <= academic_end_date %}
-            {% assign current_group_count = current_group_count | plus: 1 %}
-            
-            <article class="post-preview">
-              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-              <small>{{ post.date | date: "%B %d, %Y" }}</small>
-              <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            </article>
-
           {% endif %}
         {% endfor %}
       {% endcapture %}
 
-      {% comment %} Only display the section if posts were found in the timeframe {% endcomment %}
+      {% comment %} Only display the section if valid posts were found in the timeframe {% endcomment %}
       {% if current_group_count > 0 %}
         {% assign total_displayed_posts = total_displayed_posts | plus: current_group_count %}
         {% assign category_id = group.name | slugify | default: "general-updates" %}
@@ -116,7 +131,7 @@ academic_start_year: 2025
     {% endfor %}
 
     {% if total_displayed_posts == 0 %}
-      <p>No newsletters found for the specified academic year.</p>
+      <p>No newsletters found for the specified academic year. Check back soon!</p>
     {% endif %}
   </div>
 </div>
