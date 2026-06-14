@@ -15,8 +15,7 @@ navbar-links:
     #- Year 2026-27: "act26"
   Krishnamurti:
     - Academic Year 2025-26: "25-26"
-  Newsletter: "posts"
-  Newsletter-sub:
+  Newsletter:
     - Year 2025-26: "posts25"
     #- Year 2026-27: "posts26"
   Resources:
