@@ -14,13 +14,13 @@ navbar-links:
   Krishnamurti:
     - Spring Term 2025-26: "spr25"
     - Monsoon Term 2025-26: "mon25"
-  Information:
-    - Communication: "comms"
   Newsletter: "posts"
   Resources:
     - Photos: "photos"
     - Videos: "videos"
     - Ninad: "ninad"
+  Information:
+    - Communication: "comms"
 
   # _config.yml
 ################
