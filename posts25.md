@@ -56,7 +56,7 @@ academic_start_year: 2025
       {% comment %} 
         1. Filter out the pinned posts
         2. Filter out the unpinned posts (remaining ones)
-        3. Concatenate them so Pinned is always first
+        3. Concatenate them so Pinned is silently first without visual differentiation
       {% endcomment %}
       {% assign pinned_posts = group.items | where: "pinned", true %}
       {% assign normal_posts = group.items | where_exp: "item", "item.pinned != true" %}
@@ -73,13 +73,10 @@ academic_start_year: 2025
           {% if post_date >= academic_start_date and post_date <= academic_end_date %}
             {% assign current_group_count = current_group_count | plus: 1 %}
             
-            <article class="post-preview{% if post.pinned %} pinned{% endif %}">
+            <article class="post-preview">
               <a href="{{ post.url | relative_url }}" style="text-decoration: none;">
                 <h3 class="post-title">
                   {{ post.title }}
-                  {% if post.pinned %}
-                    <span class="pin-badge" style="font-size: 0.8em; margin-left: 8px;">📌 Pinned</span>
-                  {% endif %}
                 </h3>
                 {% if post.subtitle %}
                   <h4 class="post-subtitle">
