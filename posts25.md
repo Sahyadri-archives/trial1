@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Newsletter"
-permalink: /posts/
+permalink: /posts25/
 academic_start_year: 2025 
 ---
 
