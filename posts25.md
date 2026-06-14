@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Newsletter - Academic Year 2025-2026"
-permalink: /posts/2025-2026/
 academic_start_year: 2025 
 ---
 
