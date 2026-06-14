@@ -71,7 +71,7 @@ academic_start_year: 2025
           {% assign post_date = post.date | date: "%Y-%m-%d" %}
           {% if post_date >= academic_start_date and post_date <= academic_end_date %}
             {% assign current_group_count = current_group_count | plus: 1 %}
-            {% include post_preview_template.html %}
+            {% include post.html %}
           {% endif %}
         {% endfor %}
 
@@ -80,7 +80,7 @@ academic_start_year: 2025
           {% assign post_date = post.date | date: "%Y-%m-%d" %}
           {% if post_date >= academic_start_date and post_date <= academic_end_date %}
             {% assign current_group_count = current_group_count | plus: 1 %}
-            {% include post_preview_template.html %}
+            {% include post.html %}
           {% endif %}
         {% endfor %}
       {% endcapture %}
