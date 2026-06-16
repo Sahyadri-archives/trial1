@@ -29,10 +29,10 @@ academic_start_year: 2026
         {% assign grouped_posts = site.posts | group_by: "category" %}
         {% for group in grouped_posts %}
           
-          {% comment %} Check if category contains posts within the target year range {% endcomment %}
+          {% comment %} Changed 'item' to 'post_item' to prevent scope leaks {% endcomment %}
           {% assign has_current_posts = false %}
-          {% for item in group.items %}
-            {% assign item_date = item.date | date: "%Y-%m-%d" %}
+          {% for post_item in group.items %}
+            {% assign item_date = post_item.date | date: "%Y-%m-%d" %}
             {% if item_date >= academic_start_date and item_date <= academic_end_date %}
               {% assign has_current_posts = true %}
               {% break %}
