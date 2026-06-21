@@ -5,7 +5,7 @@ permalink: /activities/
 ---
 
 {% assign year_blocks = "2025-26" | split: "|" %}
-{% assign default_active_year = "2026" %}
+{% assign default_active_year = "2025-26" %}
 
 <div id="top" style="scroll-margin-top: 200px;"></div>
 
