@@ -8,14 +8,39 @@ permalink: /activities/
 
 <div class="tabs-container">
   <div class="academic-tabs">
-    <button class="tab-link active" onclick="switchAcademicYear(event, 'ay-2025-26')">2025–26</button>
+    {% assign year_blocks = "2026|2025|2024|archive" | split: "|" %}
+    {% for current_year in year_blocks %}
+      {% if current_year == "archive" %}
+        {% assign tab_id = "ay-archive" %}
+        {% assign tab_label = "Archive" %}
+        {% assign is_tab_active = false %}
+      {% else %}
+        {% assign start_yr = current_year | plus: 0 %}
+        {% assign end_yr = start_yr | plus: 1 | aria_hidden: true %}
+        {% assign short_end_yr = start_yr | plus: 1 | slice: 2, 2 %}
+        {% assign tab_label = start_yr | append: "–" | append: short_end_yr %}
+        
+        {% if current_year == "2025" %}
+          {% assign tab_id = "ay-2025-26" %}
+          {% assign is_tab_active = true %}
+        {% elsif current_year == "2026" %}
+          {% assign tab_id = "ay-2026-27" %}
+          {% assign is_tab_active = false %}
+        {% else %}
+          {% assign tab_id = "ay-2024-25" %}
+          {% assign is_tab_active = false %}
+        {% endif %}
+      {% endif %}
+      
+      <button class="tab-link {% if is_tab_active %}active{% endif %}" onclick="switchAcademicYear(event, '{{ tab_id }}')">
+        {{ tab_label }}
+      </button>
+    {% endfor %}
   </div>
 </div>
 
 {% assign valid_activities = site.activities | where_exp: "item", "item.date != nil" %}
 {% assign grouped_posts = valid_activities | group_by: "category" | sort: "name" %}
-
-{% assign year_blocks = "2026|2025|2024|archive" | split: "|" %}
 
 {% for current_year in year_blocks %}
   {% if current_year == "archive" %}
@@ -31,10 +56,10 @@ permalink: /activities/
     
     {% if current_year == "2026" %}
       {% assign panel_id = "ay-2026-27" %}
-      {% assign is_active = true %}
+      {% assign is_active = false %}
     {% elsif current_year == "2025" %}
       {% assign panel_id = "ay-2025-26" %}
-      {% assign is_active = false %}
+      {% assign is_active = true %}
     {% else %}
       {% assign panel_id = "ay-2024-25" %}
       {% assign is_active = false %}
