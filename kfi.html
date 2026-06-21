@@ -1,7 +1,10 @@
 ---
 layout: page
-title: Academic Year 2025-26 - Weekly Excerpts
+title: "Weekly Excerpts"
 ---
+
+{% assign year_blocks = "2025-26" | split: "|" %}
+{% assign default_active_year = "2025-26" %}
 
 <head>
     <meta charset="UTF-8">
@@ -11,23 +14,47 @@ title: Academic Year 2025-26 - Weekly Excerpts
 </head>
 <body>
 
+<div id="top" style="scroll-margin-top: 200px;"></div>
+
+<div class="tabs-container">
+  <div class="academic-tabs">
+    {% for current_year in year_blocks %}
+      {% if current_year == "archive" %}
+        {% assign tab_label = "Archive" %}
+        {% assign target_val = "archive" %}
+      {% else %}
+        {% assign start_yr = current_year | plus: 0 %}
+        {% assign short_end_yr = start_yr | plus: 1 | slice: 2, 2 %}
+        {% assign tab_label = start_yr | append: "–" | append: short_end_yr %}
+        {% assign target_val = current_year %}
+      {% endif %}
+      
+      <button 
+        class="tab-link {% if current_year == default_active_year %}active{% endif %}" 
+        onclick="switchAcademicYear(event, '{{ target_val }}')">
+        {{ tab_label }}
+      </button>
+    {% endfor %}
+  </div>
+</div>
+
 <div class="video-grid">
 
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <figcaption class="video-caption">
             Excerpt - <a href="https://drive.google.com/file/d/1CRp8Jbd8_oGXVa951jxcnQKQAcePBPxd/view?usp=sharing" target="_blank">Light Unto Oneself</a>, 
             Published on - Dec 13, 2025
         </figcaption>
     </figure>
     
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <figcaption class="video-caption">
             Excerpt - <a href="https://drive.google.com/file/d/1k9yyx9aGJ-aGxygMPTJ1tfpP2D4wWVds/view?usp=sharing" target="_blank">On Education</a>, 
             Published on - Dec 6, 2025
         </figcaption>
     </figure>
 
-  <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <div class="video-wrapper" onclick="loadVideo(this)" data-video="wm0lN9K8GNc">
             <img src="https://img.youtube.com/vi/wm0lN9K8GNc/hqdefault.jpg" class="thumbnail" alt="Freedom and Authority">
         </div>
@@ -38,7 +65,7 @@ title: Academic Year 2025-26 - Weekly Excerpts
         </figcaption>
     </figure>
 
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <div class="video-wrapper" onclick="loadVideo(this)" data-video="fHEZXF6uR1U">
             <img src="https://img.youtube.com/vi/fHEZXF6uR1U/hqdefault.jpg" class="thumbnail" alt="On Authority">
         </div>
@@ -48,7 +75,7 @@ title: Academic Year 2025-26 - Weekly Excerpts
         </figcaption>
     </figure>
 
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <div class="video-wrapper" onclick="loadVideo(this)" data-video="ztLEMnrEE2s">
             <img src="https://img.youtube.com/vi/ztLEMnrEE2s/hqdefault.jpg" class="thumbnail" alt="On Love">
         </div>
@@ -58,7 +85,7 @@ title: Academic Year 2025-26 - Weekly Excerpts
         </figcaption>
     </figure>
 
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <div class="video-wrapper" onclick="loadVideo(this)" data-video="ztlt1GeA_nQ">
             <img src="https://img.youtube.com/vi/ztlt1GeA_nQ/hqdefault.jpg" class="thumbnail" alt="On Love">
         </div>
@@ -68,7 +95,7 @@ title: Academic Year 2025-26 - Weekly Excerpts
         </figcaption>
     </figure>
 
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <div class="video-wrapper" onclick="loadVideo(this)" data-video="Ke32Z2KkS6w">
             <img src="https://img.youtube.com/vi/Ke32Z2KkS6w/hqdefault.jpg" class="thumbnail" alt="Art of Listening, Looking and Learning">
         </div>
@@ -79,7 +106,7 @@ title: Academic Year 2025-26 - Weekly Excerpts
         </figcaption>
     </figure>
 
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <div class="video-wrapper" onclick="loadVideo(this)" data-video="f-3wSP0Au8o">
             <img src="https://img.youtube.com/vi/f-3wSP0Au8o/hqdefault.jpg" class="thumbnail" alt="Freedom and Discipline">
         </div>
@@ -90,7 +117,7 @@ title: Academic Year 2025-26 - Weekly Excerpts
         </figcaption>
     </figure>
 
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <div class="video-wrapper" onclick="loadVideo(this)" data-video="ZQGdEvhZl1U">
             <img src="https://img.youtube.com/vi/ZQGdEvhZl1U/hqdefault.jpg" class="thumbnail" alt="The Function of a Parent">
         </div>
@@ -101,7 +128,7 @@ title: Academic Year 2025-26 - Weekly Excerpts
         </figcaption>
     </figure>
 
-    <figure class="video-item">
+    <figure class="video-item" data-year="2025">
         <div class="video-wrapper" onclick="loadVideo(this)" data-video="5lJRtT4P4ps">
             <img src="https://img.youtube.com/vi/5lJRtT4P4ps/hqdefault.jpg" class="thumbnail" alt="Total Development of a Child and Parent">
         </div>
@@ -112,38 +139,124 @@ title: Academic Year 2025-26 - Weekly Excerpts
         </figcaption>
     </figure>
     
+    <figure class="video-item" data-year="2026">
+        <figcaption class="video-caption">
+            Excerpt - Future 2026 Placeholder Video Link
+        </figcaption>
+    </figure>
 
 </div> 
 
-    <script>
+<style>
+  .tabs-container {
+    width: 100%;
+    margin: 2rem 0 3rem 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
 
-    function loadVideo(container) {
+  .academic-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
-        const videoId = container.getAttribute('data-video');
+  .tab-link {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0.75rem 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-family: inherit;
+    color: #718096;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+  }
 
-        // autoplay=1 starts the video immediately after the click
+  .tab-link:hover, .tab-link.active {
+    color: #5f745f; 
+    border-bottom: 3px solid #5f745f;
+  }
+  
+  /* Grid filter styles */
+  .video-item {
+    display: none;
+  }
+  
+  .video-item.active-view {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
 
-        // rel=0 prevents showing related videos from other channels
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-        const iframe = document.createElement('iframe');
-
-        iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
-
-        iframe.setAttribute('frameborder', '0');
-
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-
-        iframe.setAttribute('allowfullscreen', 'true'); // Enables the fullscreen button
-
-        
-
-        // Replace thumbnail and play button with the player
-
-        container.innerHTML = '';
-
-        container.appendChild(iframe);
-
+  @media (max-width: 767px) {
+    .academic-tabs {
+      gap: 1rem;
+      justify-content: flex-start;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 0.5rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .tab-link {
+      font-size: 1rem;
+      padding: 0.5rem 0.25rem;
     }
 
-    </script>
+    .tabs-container {
+      margin: 1rem 0 2rem 0;
+    }
+  }
+</style>
+
+<script>
+  function switchAcademicYear(evt, selectedYear) {
+    // 1. Update Active Class On Buttons
+    const tabs = document.getElementsByClassName("tab-link");
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove("active");
+    }
+    if(evt && evt.currentTarget) {
+      evt.currentTarget.classList.add("active");
+    }
+
+    // 2. Filter Elements via Data-Attribute Matching
+    const videoItems = document.getElementsByClassName("video-item");
+    for (let i = 0; i < videoItems.length; i++) {
+      if (videoItems[i].getAttribute("data-year") === selectedYear) {
+        videoItems[i].classList.add("active-view");
+      } else {
+        videoItems[i].classList.remove("active-view");
+      }
+    }
+    
+    document.getElementById("top").scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Trigger default selection instantly on initial DOM construction layout initialization
+  document.addEventListener("DOMContentLoaded", function() {
+    switchAcademicYear(null, "{{ default_active_year }}");
+  });
+
+  function loadVideo(container) {
+    const videoId = container.getAttribute('data-video');
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('allowfullscreen', 'true');
+    
+    container.innerHTML = '';
+    container.appendChild(iframe);
+  }
+</script>
 </body>
