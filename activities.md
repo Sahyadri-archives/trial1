@@ -35,11 +35,11 @@ permalink: /activities/
     {% assign academic_start_date = start_yr | append: "-06-01" %}
     {% assign academic_end_date = end_yr | append: "-03-31" %}
     
-    <!-- Robust ID mapping to perfectly match your tab buttons -->
+    <!-- Fixed ID mapping by replacing 'elif' with 'elsif' -->
     {% if current_year == "2026" %}
       {% assign panel_id = "ay-2026-27" %}
       {% assign is_active = true %}
-    {% elif current_year == "2025" %}
+    {%  elsif current_year == "2025" %}
       {% assign panel_id = "ay-2025-26" %}
       {% assign is_active = false %}
     {% else %}
