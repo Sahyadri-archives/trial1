@@ -11,8 +11,7 @@ author: Sahyadri
 
 navbar-links:
   Activities: "activities"
-  Krishnamurti:
-    - Academic Year 2025-26: "25-26"
+  Krishnamurti: "kfi"
   Newsletter: "posts"
   Resources:
     - Photos: "photos"
