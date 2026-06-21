@@ -8,10 +8,7 @@ permalink: /posts/
 
 <div class="tabs-container">
   <div class="academic-tabs">
-    <button class="tab-link active" onclick="switchAcademicYear(event, 'ay-2026-27')">2026–27</button>
-    <button class="tab-link" onclick="switchAcademicYear(event, 'ay-2025-26')">2025–26</button>
-    <button class="tab-link" onclick="switchAcademicYear(event, 'ay-2024-25')">2024–25</button>
-    <button class="tab-link" onclick="switchAcademicYear(event, 'ay-archive')">Archive</button>
+    <button class="tab-link active" onclick="switchAcademicYear(event, 'ay-2025-26')">2025–26</button>
   </div>
 </div>
 
