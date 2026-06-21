@@ -4,35 +4,27 @@ title: "Activities"
 permalink: /activities/
 ---
 
+{% assign year_blocks = "2025-26" | split: "|" %}
+{% assign default_active_year = "2026" %}
+
 <div id="top" style="scroll-margin-top: 200px;"></div>
 
 <div class="tabs-container">
   <div class="academic-tabs">
-    {% assign year_blocks = "2026|2025|2024|archive" | split: "|" %}
     {% for current_year in year_blocks %}
       {% if current_year == "archive" %}
         {% assign tab_id = "ay-archive" %}
         {% assign tab_label = "Archive" %}
-        {% assign is_tab_active = false %}
       {% else %}
         {% assign start_yr = current_year | plus: 0 %}
-        {% assign end_yr = start_yr | plus: 1 | aria_hidden: true %}
         {% assign short_end_yr = start_yr | plus: 1 | slice: 2, 2 %}
+        {% assign tab_id = "ay-" | append: start_yr | append: "-" | append: short_end_yr %}
         {% assign tab_label = start_yr | append: "–" | append: short_end_yr %}
-        
-        {% if current_year == "2025" %}
-          {% assign tab_id = "ay-2025-26" %}
-          {% assign is_tab_active = true %}
-        {% elsif current_year == "2026" %}
-          {% assign tab_id = "ay-2026-27" %}
-          {% assign is_tab_active = false %}
-        {% else %}
-          {% assign tab_id = "ay-2024-25" %}
-          {% assign is_tab_active = false %}
-        {% endif %}
       {% endif %}
       
-      <button class="tab-link {% if is_tab_active %}active{% endif %}" onclick="switchAcademicYear(event, '{{ tab_id }}')">
+      <button 
+        class="tab-link {% if current_year == default_active_year %}active{% endif %}" 
+        onclick="switchAcademicYear(event, '{{ tab_id }}')">
         {{ tab_label }}
       </button>
     {% endfor %}
@@ -47,23 +39,19 @@ permalink: /activities/
     {% assign academic_start_date = "1970-01-01" %}
     {% assign academic_end_date = "2024-05-31" %}
     {% assign panel_id = "ay-archive" %}
-    {% assign is_active = false %}
   {% else %}
     {% assign start_yr = current_year | plus: 0 %}
     {% assign end_yr = start_yr | plus: 1 %}
+    {% assign short_end_yr = end_yr | slice: 2, 2 %}
+    
     {% assign academic_start_date = start_yr | append: "-06-01" %}
     {% assign academic_end_date = end_yr | append: "-03-31" %}
-    
-    {% if current_year == "2026" %}
-      {% assign panel_id = "ay-2026-27" %}
-      {% assign is_active = false %}
-    {% elsif current_year == "2025" %}
-      {% assign panel_id = "ay-2025-26" %}
-      {% assign is_active = true %}
-    {% else %}
-      {% assign panel_id = "ay-2024-25" %}
-      {% assign is_active = false %}
-    {% endif %}
+    {% assign panel_id = "ay-" | append: start_yr | append: "-" | append: short_end_yr %}
+  {% endif %}
+
+  {% assign is_active = false %}
+  {% if current_year == default_active_year %}
+    {% assign is_active = true %}
   {% endif %}
 
   <div id="{{ panel_id }}" class="academic-panel {% if is_active %}active{% endif %}">
