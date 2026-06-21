@@ -6,6 +6,7 @@ permalink: /activities/
 
 <div id="top" style="scroll-margin-top: 200px;"></div>
 
+<!-- 1. ACADEMIC YEAR NAVIGATION TABS -->
 <div class="tabs-container">
   <div class="academic-tabs">
     <button class="tab-link active" onclick="switchAcademicYear(event, 'ay-2026-27')">2026–27</button>
@@ -15,9 +16,11 @@ permalink: /activities/
   </div>
 </div>
 
+<!-- 2. CONTENT PANELS PER YEAR -->
 {% assign valid_activities = site.activities | where_exp: "item", "item.date != nil" %}
 {% assign grouped_posts = valid_activities | group_by: "category" | sort: "name" %}
 
+<!-- Target blocks for explicit loop filtering -->
 {% assign year_blocks = "2026|2025|2024|archive" | split: "|" %}
 
 {% for current_year in year_blocks %}
@@ -31,11 +34,16 @@ permalink: /activities/
     {% assign end_yr = start_yr | plus: 1 %}
     {% assign academic_start_date = start_yr | append: "-06-01" %}
     {% assign academic_end_date = end_yr | append: "-03-31" %}
-    {% assign panel_id = "ay-" | append: start_yr | append: "-" | append: end_yr | slice: 0, 10 %}
     
+    <!-- Robust ID mapping to perfectly match your tab buttons -->
     {% if current_year == "2026" %}
+      {% assign panel_id = "ay-2026-27" %}
       {% assign is_active = true %}
+    {% elif current_year == "2025" %}
+      {% assign panel_id = "ay-2025-26" %}
+      {% assign is_active = false %}
     {% else %}
+      {% assign panel_id = "ay-2024-25" %}
       {% assign is_active = false %}
     {% endif %}
   {% endif %}
@@ -43,6 +51,7 @@ permalink: /activities/
   <div id="{{ panel_id }}" class="academic-panel {% if is_active %}active{% endif %}">
     <div class="newsletter-container">
       
+      <!-- Category Sidebar for this specific year -->
       <aside class="toc-sidebar">
         <nav class="toc-card">
           <h2 class="toc-title">Activities</h2>
@@ -68,6 +77,7 @@ permalink: /activities/
         </nav>
       </aside>
 
+      <!-- Posts List for this specific year -->
       <div class="posts-list">
         {% assign total_displayed_posts = 0 %}
 
@@ -140,8 +150,8 @@ permalink: /activities/
   </div>
 {% endfor %}
 
+<!-- 3. STYLES FOR THE TABS AND NATURALIZED LAYOUT -->
 <style>
-  /* Tabs layout Container */
   .tabs-container {
     width: 100%;
     margin: 2rem 0 3rem 0;
@@ -157,7 +167,6 @@ permalink: /activities/
     padding: 0 1rem;
   }
 
-  /* Naturalized flat button tabs matching your theme */
   .tab-link {
     background: none;
     border: none;
@@ -172,13 +181,11 @@ permalink: /activities/
     border-bottom: 3px solid transparent;
   }
 
-  /* Active state with Sage green underline */
   .tab-link:hover, .tab-link.active {
-    color: #5f745f; /* Using your branding theme tone */
+    color: #5f745f; 
     border-bottom: 3px solid #5f745f;
   }
 
-  /* Content Panel switching control */
   .academic-panel {
     display: none;
   }
@@ -188,7 +195,6 @@ permalink: /activities/
     animation: fadeIn 0.4s ease;
   }
 
-  /* Naturalized Read More element styling */
   .post-read-more {
     display: inline-block;
     margin-left: 0.5rem;
@@ -214,7 +220,6 @@ permalink: /activities/
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Mobile Responsive adjustments */
   @media (max-width: 767px) {
     .academic-tabs {
       gap: 1rem;
@@ -236,25 +241,22 @@ permalink: /activities/
   }
 </style>
 
+<!-- 4. LIGHTWEIGHT JAVASCRIPT PANEL SWITCHER -->
 <script>
   function switchAcademicYear(evt, panelId) {
-    // Hide all panels
     const panels = document.getElementsByClassName("academic-panel");
     for (let i = 0; i < panels.length; i++) {
       panels[i].classList.remove("active");
     }
 
-    // Deactivate all tab underlines
     const tabs = document.getElementsByClassName("tab-link");
     for (let i = 0; i < tabs.length; i++) {
       tabs[i].classList.remove("active");
     }
 
-    // Show target panel and set active state to the clicked tab button
     document.getElementById(panelId).classList.add("active");
     evt.currentTarget.classList.add("active");
     
-    // Smooth scroll backup to view area top context cleanly
     document.getElementById("top").scrollIntoView({ behavior: 'smooth' });
   }
 </script>
