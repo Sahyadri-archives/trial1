@@ -6,7 +6,6 @@ permalink: /activities/
 
 <div id="top" style="scroll-margin-top: 200px;"></div>
 
-<!-- 1. ACADEMIC YEAR NAVIGATION TABS -->
 <div class="tabs-container">
   <div class="academic-tabs">
     <button class="tab-link active" onclick="switchAcademicYear(event, 'ay-2026-27')">2026–27</button>
@@ -16,11 +15,9 @@ permalink: /activities/
   </div>
 </div>
 
-<!-- 2. CONTENT PANELS PER YEAR -->
 {% assign valid_activities = site.activities | where_exp: "item", "item.date != nil" %}
 {% assign grouped_posts = valid_activities | group_by: "category" | sort: "name" %}
 
-<!-- Target blocks for explicit loop filtering -->
 {% assign year_blocks = "2026|2025|2024|archive" | split: "|" %}
 
 {% for current_year in year_blocks %}
@@ -35,11 +32,10 @@ permalink: /activities/
     {% assign academic_start_date = start_yr | append: "-06-01" %}
     {% assign academic_end_date = end_yr | append: "-03-31" %}
     
-    <!-- Fixed ID mapping by replacing 'elif' with 'elsif' -->
     {% if current_year == "2026" %}
       {% assign panel_id = "ay-2026-27" %}
       {% assign is_active = true %}
-    {%  elsif current_year == "2025" %}
+    {% elsif current_year == "2025" %}
       {% assign panel_id = "ay-2025-26" %}
       {% assign is_active = false %}
     {% else %}
@@ -51,7 +47,6 @@ permalink: /activities/
   <div id="{{ panel_id }}" class="academic-panel {% if is_active %}active{% endif %}">
     <div class="newsletter-container">
       
-      <!-- Category Sidebar for this specific year -->
       <aside class="toc-sidebar">
         <nav class="toc-card">
           <h2 class="toc-title">Activities</h2>
@@ -77,7 +72,6 @@ permalink: /activities/
         </nav>
       </aside>
 
-      <!-- Posts List for this specific year -->
       <div class="posts-list">
         {% assign total_displayed_posts = 0 %}
 
@@ -150,7 +144,6 @@ permalink: /activities/
   </div>
 {% endfor %}
 
-<!-- 3. STYLES FOR THE TABS AND NATURALIZED LAYOUT -->
 <style>
   .tabs-container {
     width: 100%;
@@ -241,7 +234,6 @@ permalink: /activities/
   }
 </style>
 
-<!-- 4. LIGHTWEIGHT JAVASCRIPT PANEL SWITCHER -->
 <script>
   function switchAcademicYear(evt, panelId) {
     const panels = document.getElementsByClassName("academic-panel");
