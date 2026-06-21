@@ -10,9 +10,7 @@ author: Sahyadri
 ###############################################
 
 navbar-links:
-  Activities:
-    - Year 2025-26: "act25"
-    #- Year 2026-27: "act26"
+  Activities: "activities"
   Krishnamurti:
     - Academic Year 2025-26: "25-26"
   Newsletter:
