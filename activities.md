@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Activities"
-permalink: /act25/
+permalink: /activities/
 ---
 
 <div id="top" style="scroll-margin-top: 200px;"></div>
