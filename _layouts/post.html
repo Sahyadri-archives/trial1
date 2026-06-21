@@ -1,13 +1,26 @@
 ---
 layout: base
 ---
+<style>
+  /* Base style: Hide the back button by default (Desktops and Tablets) */
+  .back-navigation {
+    display: none;
+  }
+
+  /* Mobile-only style: Show the button only on screens narrower than 768px */
+  @media (max-width: 767px) {
+    .back-navigation {
+      display: block; /* or 'flex' depending on your layout preference */
+    }
+  }
+</style>
 
 <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
   <div class="row">
     <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
 
-      <div class="back-navigation">
-  <a href="/posts25" id="back-button">
+     <div class="back-navigation">
+  <a href="#" id="back-button" onclick="window.history.back(); return false;">
     <i class="fas fa-chevron-left"></i> 
     Back
   </a>
