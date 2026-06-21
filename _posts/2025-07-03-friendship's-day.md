@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Friendship's Day"
+title: "Sharad's Friendship's Day"
 date: 2025-07-03
 subtitle: "By Anvi Bharadwaj (Grade 9)"
 category: August 2025
