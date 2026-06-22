@@ -9,7 +9,7 @@ image: "/assets/img/Newsletter/Christmas.png"
 
 Like every year, Sahyadri was filled with the Christmas spirit this December too. There was that quiet excitement that comes every December, the kind that settles into the corridors and dorms and makes every place feel just a little more alive. Not to forget the carol singing that takes place every year, with tunes of Joy to the World, Silent Night, O Holy Night dancing about in the air, weaving themselves into conversations and laughter. Mira Akka used to organise the carol singing each year and this year we felt her absence acutely. However, the cultural committee ably stepped in to continue the legacy she had left. 
 
-![Christmas]({{ "/assets/img/Newsletter/Christmas.png" | relative_url }})
+![Christmas]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
 
 The entire student body participated in the celebrations. From the youngest to the oldest, there was space for every voice. Grades 4 to 8 sang the carols with their dorm mates while the senior grades sang with their batch mates. Volunteers from across the grades came together for special bonus performances. It was not about perfection but about showing up and singing.
 
