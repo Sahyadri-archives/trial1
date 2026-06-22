@@ -4,7 +4,7 @@ title: "Tabla Performance"
 date: 2025-09-22
 subtitle: "Naysa Mehta (Grade 11)"
 category: September 2025
-image: "/assets/img/Newsletter/tablaassembly.png"
+image: "1ZJfJDtm8_UftxUYyts3cmR8qGiSO41pM"
 ---
 
 No one can deny that hobby classes in Sahyadri are a huge success. One of these are the Tabla hobby classes. In these classes, students master playing the tabla at various levels. It starts with something as simple as ‘dha dhin dhin dha’ and slowly grows into something beautiful. There are many ways in which a tabla can be presented; it can be presented as an accompaniment instrument as well as a solo.
