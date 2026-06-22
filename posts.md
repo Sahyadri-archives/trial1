@@ -109,7 +109,7 @@ permalink: /posts/
                     {% assign author1_slug = author1_parts[0] | downcase %}
                     {% assign profile1_url = '/profiles/' | append: author1_slug | relative_url %}
                     
-                    <h4 class="post-subtitle" style="margin-top: 0.5rem; font-weight: inherit;">
+                    <h4 class="post-subtitle">
                       By <a href="{{ profile1_url }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% assign author2_slug = author2_parts[0] | downcase %}{% assign profile2_url = '/profiles/' | append: author2_slug | relative_url %} and <a href="{{ profile2_url }}">{{ post.subtitle2 }}</a>{% endif %}
                     </h4>
                   {% endif %}
@@ -204,11 +204,20 @@ permalink: /posts/
     animation: fadeIn 0.4s ease;
   }
 
+  /* Modified subtitle style to feature Amatic SC font profile variables */
+  .post-subtitle {
+    font-family: 'Amatic SC', cursive, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+
   .post-subtitle a {
+    font-family: inherit;
     color: #5f745f;
     text-decoration: none;
-    font-weight: 600;
-    font-familiy: Amatic Sc;
   }
 
   .post-subtitle a:hover {
@@ -223,6 +232,8 @@ permalink: /posts/
   }
 
   .post-image img {
+    width: 180px;
+    height: 120px;
     object-fit: cover;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
