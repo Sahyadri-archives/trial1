@@ -4,7 +4,7 @@ title: "Twelve Angry Jurors"
 date: 2025-07-26
 subtitle: "Nayantara (Grade 11)"
 category: August 2025
-image: 1HIMJVtcxCU24W0djPx4D6mDTOUB17_00
+image: "1HIMJVtcxCU24W0djPx4D6mDTOUB17_00"
 ---
 
 ‘Twelve Angry Jurors’ was a play put up by Grade 11 on the 26th of July. It was an adaptation of primarily two films, the American film ‘Twelve Angry Men’ and its Indian counterpart, ‘Ek Ruka Hua Faisla’. 
