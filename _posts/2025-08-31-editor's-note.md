@@ -2,7 +2,7 @@
 layout: post
 title: "Editor's Welcome Note"
 date: 2025-08-31
-subtitle: "By Rachit Agrawal (Grade 11)"
+subtitle: "Rachit Agrawal (Grade 11)"
 category: August 2025
 pinned: true
 ---
