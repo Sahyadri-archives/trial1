@@ -9,7 +9,7 @@ image: "/assets/img/Newsletter/footballcamps.png"
 
 The football camp, held over two weeks in July, welcomed both boys and girls from the junior and senior school. Sessions were conducted during each group’s respective Games period, with the senior girls training in the mornings.
 
-![Football Camp]({{ "/assets/img/Newsletter/footballcamps.png" | relative_url }})
+![Football Camp]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
 
 The camp was led by Sameer Sir, an ISL 3rd Division player, who guided us through a variety of drills focused on passing, control, defending, and other core skills. His professional approach and energy made each session engaging and productive.
 
