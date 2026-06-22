@@ -9,7 +9,7 @@ image: "/assets/img/Newsletter/Football _ Senior Girls .JPG"
 
 It's a corner. Nayantara stands behind the ball, eyes fixed on the goal: Chick… Chick… BOOM! The ball soars in the air only to be perfectly cleared by Naina as it reaches the ground, and the ball is out once again.
 
-![Football Senior Girls]({{ "/assets/img/Newsletter/Football _ Senior Girls .JPG" | relative_url }})
+![Football Senior Girls]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
 
 The 9-10th vs 11-12th girls’ football match, one of the first events of this year’s much-awaited three-day sports fest, was one packed with skill, camaraderie, and adrenaline.
  
