@@ -9,7 +9,7 @@ image: "1gTX0vXVVjQVDLM4v_3jBDD0r3bB3rkwC"
 
 Friendship Day is one of the most anticipated events in Sahyadri. As every year, it was hosted by the Grade 9 students. They picked the nostalgic theme of ‘cartoons’, which reflected in the decor, activities, and menu of the event. 
 
-![Friendship Day]({{ "/assets/img/Newsletter/friendship.png" | relative_url }})
+![Friendship Day]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
 
 #### Games and Activities
 There were multiple activities that students and teachers both enjoyed, from 3-legged race to “who's most likely to?” Cartoon trivia and Trust falls brought alive the message of the evening. 
