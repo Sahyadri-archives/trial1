@@ -2,7 +2,7 @@
 layout: post
 title: "Editorial Note"
 date: 2025-09-30
-subtitle: "By Reya Shah (Grade 11)"
+subtitle: "Reya Shah (Grade 11)"
 category: September 2025
 image: "/assets/img/Newsletter/septembereditorialnote.png"
 pinned: true
