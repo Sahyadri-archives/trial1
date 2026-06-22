@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Friendship's Day"
-date: 2025-07-03
+date: 2025-08-03
 subtitle: "Anvi Bharadwaj (Grade 9)"
 category: August 2025
 image: "1gTX0vXVVjQVDLM4v_3jBDD0r3bB3rkwC"
