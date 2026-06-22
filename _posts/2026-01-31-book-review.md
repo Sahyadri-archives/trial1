@@ -2,7 +2,7 @@
 layout: post
 title: "Book Review"
 date: 2026-01-31
-subtitle: "By Aadya Tyagi (Grade 11)"
+subtitle: "Aadya Tyagi (Grade 11)"
 category: January 2026
 image: "/assets/img/Newsletter/bookreview.jpg"
 ---
