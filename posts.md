@@ -222,8 +222,6 @@ permalink: /posts/
   }
 
   .post-image img {
-    width: 180px;
-    height: 120px;
     object-fit: cover;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
