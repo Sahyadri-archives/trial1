@@ -2,7 +2,7 @@
 layout: post
 title: "Alumni Meet: 30 Years of Sahyadri"
 date: 2025-12-22
-subtitle: "By Reya Shah and Swara Bathe (Grade 11)"
+subtitle: "Reya Shah and Swara Bathe (Grade 11)"
 category: December 2025
 image: "/assets/img/Newsletter/alumnimeet.JPG"
 ---
