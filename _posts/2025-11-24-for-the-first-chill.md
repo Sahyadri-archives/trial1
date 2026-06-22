@@ -2,7 +2,7 @@
 layout: post
 title: "For the First Chill"
 date: 2025-11-24
-subtitle: " By Naina Chaudhary (Grade 10)"
+subtitle: "Naina Chaudhary (Grade 10)"
 category: November 2025
 ---
 
