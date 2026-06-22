@@ -4,7 +4,7 @@ title: "New Year's Eve"
 date: 2025-12-31
 subtitle: "Avishi Chaudhary and Ira Akode (Grade 8)"
 category: December 2025 
-image: "/assets/img/Newsletter/newyear_seve.jpg"
+image: "1BUMHl8CQ2LapGIu6vY3hkKHAsq0e5qah"
 ---
 
 This year, the students of grade 8 organised the New Year’s Eve dinner. The theme for the event was ‘vintage’ and the decor was to be minimalistic yet elegant. We also designed a range of games, including foosball, locksmith, ping-pong toss, mini bowling and flip the bottle. Teachers and students from across the batches took part in the games and enjoyed them thoroughly. As always, the food was the most eagerly awaited part of the evening, with the Dining Hall delighting everyone with the delicious Pita and Hummus, as well as the Chocolate Lava cake. 
