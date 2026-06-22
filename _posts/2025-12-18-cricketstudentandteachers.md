@@ -2,7 +2,7 @@
 layout: post
 title: "Cricket Match, Students vs Teachers"
 date: 2025-12-18
-subtitle: "By Gatik Sirohia (Grade 9)"
+subtitle: "Gatik Sirohia (Grade 9)"
 category: December 2025
 image: "/assets/img/Newsletter/cricket-stdvstea.JPG"
 ---
