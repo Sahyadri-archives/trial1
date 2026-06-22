@@ -2,7 +2,7 @@
 layout: post
 title: "Volleyball and Basketball Camps"
 date: 2025-09-22
-subtitle: "By Rachit Agrawal and Hemant Kamalia (Grade 11)"
+subtitle: "Rachit Agrawal and Hemant Kamalia (Grade 11)"
 category: September 2025
 ---
 
