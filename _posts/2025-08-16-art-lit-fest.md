@@ -2,7 +2,7 @@
 layout: post
 title: "Art and Literature Fest: The Poetry of Life"
 date: 2025-08-16
-subtitle: "By Aadya Tyagi (Grade 11)"
+subtitle: "Aadya Tyagi (Grade 11)"
 category: August 2025
 image: "/assets/img/Newsletter/artandliteraturefest.png"
 ---
