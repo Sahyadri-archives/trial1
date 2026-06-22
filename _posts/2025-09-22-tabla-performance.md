@@ -2,7 +2,7 @@
 layout: post
 title: "Tabla Performance"
 date: 2025-09-22
-subtitle: "By Naysa Mehta (Grade 11)"
+subtitle: "Naysa Mehta (Grade 11)"
 category: September 2025
 image: "/assets/img/Newsletter/tablaassembly.png"
 ---
