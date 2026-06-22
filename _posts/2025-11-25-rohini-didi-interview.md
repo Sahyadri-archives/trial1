@@ -4,7 +4,7 @@ title: "Interviewing Rohini Didi"
 date: 2025-11-25
 subtitle: "Ashrith Reddy and Riddhim Inamké (Grade 11)"
 category: November 2025 
-image: "/assets/img/Newsletter/rohinididiinterview.png"
+image: "1j2nUEqjoW5XM_AtTaKuq_6v11D8DGyak"
 ---
 We sat down with Rohini Didi at the dining hall and saw, up close, the quiet devotion our didis and dadas put into our lives every single day and night. Their care, presence, and stories are the heartbeat of our community. To celebrate them and the bonds they help nurture, the newsletter will share interviews with these remarkable staff members—reminding us that every teacher, student, and staff member is part of this shared journey. Here’s the interview.
 
