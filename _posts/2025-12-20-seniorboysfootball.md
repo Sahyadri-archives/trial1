@@ -9,7 +9,7 @@ image: "/assets/img/Newsletter/football-fest.JPG"
 
 On the final day the boys of Grades 11 and 12 faced the boys of Grades 9 and 10 in a Football match. Both the teams chose their most suitable players for one of the most awaited events of the Sports Fest. The spectators too were excited. 
 
-![Football Match Senior Boys]({{ "/assets/img/Newsletter/football-fest.JPG" | relative_url }})
+![Football Match Senior Boys]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
 
 I was lucky enough to be a part of the Grades 11 and 12 team. The match took place after a break. This gave us ample time to rest and prepare ourselves. It was scheduled to begin at 2:50 pm, but there was a short delay. 
 
