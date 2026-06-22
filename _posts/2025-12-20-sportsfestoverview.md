@@ -2,7 +2,7 @@
 layout: post
 title: "An Essence of a Sahyadri Sports Fest"
 date: 2025-12-20
-subtitle: "By Yuana Garg (Grade 10)"
+subtitle: "Yuana Garg (Grade 10)"
 category: December 2025
 image: "/assets/img/Newsletter/opening-fest.png"
 ---
