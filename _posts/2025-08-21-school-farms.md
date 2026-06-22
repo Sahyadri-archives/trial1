@@ -4,7 +4,7 @@ title: "School Farms and Outreach"
 date: 2025-08-21
 subtitle: "Deepa Akka"
 category: August 2025
-image: "/assets/img/Newsletter/ruraloutreach.png"
+image: "1nMXxx7WPnw-Houk74Va_VevCGAwaVn-S"
 ---
 
 We had an early start to the monsoons this year; the rains arrived in mid-May, a good two months in advance, and that too in heavy showers. While this helped turn the campus into a welcoming shade of green, it put a strain on the farmland preparation activities—both at the school side as well as at the village level. This is expected to impact the growth and yield of this year’s monsoon crops. 
