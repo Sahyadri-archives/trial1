@@ -12,6 +12,26 @@ layout: base
       margin-top: 12.5vw;
   }
 
+  /* Style targeting the author subheadings to use Amatic SC */
+  .post-subheading {
+    font-family: 'Amatic SC', cursive, sans-serif;
+    font-size: 2.2rem;       /* Amatic SC naturally renders small; size increased for legibility */
+    font-weight: 700;        /* Bold weight helps it stand out */
+    letter-spacing: 0.05em;  /* Slightly wider spacing for cleaner appearance */
+    margin-top: 0.5rem;
+  }
+
+  /* Ensure the links within the subheading inherit the Amatic SC styling */
+  .post-subheading a {
+    font-family: inherit;
+    color: #5f745f;
+    text-decoration: none;
+  }
+
+  .post-subheading a:hover {
+    text-decoration: underline;
+  }
+
   /* Mobile-only style: Show the button only on screens narrower than 768px */
   @media (max-width: 767px) {
     .back-navigation {
