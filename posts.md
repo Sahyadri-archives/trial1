@@ -119,10 +119,10 @@ permalink: /posts/
                   </p>
 
                   <div class="post-entry-container">
-                    {% if post.image_id %}
+                    {% if post.image %}
                       <div class="post-image">
                         <a href="{{ post.url | relative_url }}">
-                          <img src="https://docs.google.com/uc?export=view&id={{ post.image_id }}" alt="{{ post.title }}">
+                          <img src="https://docs.google.com/uc?export=view&id={{ post.image }}" alt="{{ post.title }}">
                         </a>
                       </div>
                     {% endif %}
