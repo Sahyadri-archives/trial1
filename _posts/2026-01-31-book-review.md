@@ -4,7 +4,7 @@ title: "Book Review"
 date: 2026-01-31
 subtitle: "Aadya Tyagi (Grade 11)"
 category: January 2026
-image: "/assets/img/Newsletter/bookreview.jpg"
+image: "1zcJzXsM_YgORoAsHfOgiVZP84AAfVS8Q"
 ---
 
 Book: The Incorrigible Children of Ashton Place: The Mysterious Howling
