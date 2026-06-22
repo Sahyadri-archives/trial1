@@ -2,7 +2,7 @@
 layout: post
 title: "Football Match: Senior Boys"
 date: 2025-12-20
-subtitle: "By Maïan Rangad (Grade 11)"
+subtitle: "Maïan Rangad (Grade 11)"
 category: December 2025
 image: "/assets/img/Newsletter/football-fest.JPG"
 ---
