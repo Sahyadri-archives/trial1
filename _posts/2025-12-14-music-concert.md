@@ -2,7 +2,7 @@
 layout: post
 title: "Music Concert in Pune"
 date: 2025-12-14
-subtitle: "By Kavya Raikar and Veda Agrawal (Grade 9)"
+subtitle: "Kavya Raikar and Veda Agrawal (Grade 9)"
 category: December 2025
 image: "/assets/img/Newsletter/musicouting.jpg"
 ---
