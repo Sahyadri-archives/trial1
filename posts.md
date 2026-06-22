@@ -105,9 +105,10 @@ permalink: /posts/
                   {% if post.subtitle %}
                     {% assign author1_parts = post.subtitle | split: ' ' %}
                     {% assign author1_slug = author1_parts[0] | downcase %}
+                    {% assign profile1_url = '/profiles/' | append: author1_slug | relative_url %}
                     
                     <h4 class="post-subtitle" style="margin-top: 0.5rem; font-weight: inherit;">
-                      By <a href="{{ '/profiles/' | relative_url }}{{ author1_slug }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% assign author2_slug = author2_parts[0] | downcase %} and <a href="{{ '/profiles/' | relative_url }}{{ author2_slug }}">{{ post.subtitle2 }}</a>{% endif %}
+                      By <a href="{{ profile1_url }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% assign author2_slug = author2_parts[0] | downcase %}{% assign profile2_url = '/profiles/' | append: author2_slug | relative_url %} and <a href="{{ profile2_url }}">{{ post.subtitle2 }}</a>{% endif %}
                     </h4>
                   {% endif %}
 
@@ -119,7 +120,7 @@ permalink: /posts/
                     {% if post.image_id %}
                       <div class="post-image">
                         <a href="{{ post.url | relative_url }}">
-                          <img src="https://lh3.googleusercontent.com/d/{{ post.image_id }}" alt="{{ post.title }}">
+                          <img src="https://docs.google.com/uc?export=view&id={{ post.image_id }}" alt="{{ post.title }}">
                         </a>
                       </div>
                     {% endif %}
