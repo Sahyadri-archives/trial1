@@ -2,7 +2,7 @@
 layout: post
 title: "Fresher's Eve"
 date: 2025-07-12
-subtitle: "By Swara Bathe (Grade 11)"
+subtitle: "Swara Bathe (Grade 11)"
 category: August 2025
 ---
 
