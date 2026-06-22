@@ -122,7 +122,7 @@ permalink: /posts/
                     {% if post.image %}
                       <div class="post-image">
                         <a href="{{ post.url | relative_url }}">
-                          <img src="https://docs.google.com/uc?export=view&id={{ post.image }}" alt="{{ post.title }}">
+                          <img src="https://docs.google.com/uc?export=thumbnail&id={{ post.image }}&sz=w800" alt="{{ post.title }}">
                         </a>
                       </div>
                     {% endif %}
@@ -214,6 +214,22 @@ permalink: /posts/
     text-decoration: underline;
   }
 
+  .post-entry-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+
+  .post-image img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: block;
+  }
+
   .post-read-more {
     display: inline-block;
     margin-left: 0.5rem;
@@ -255,6 +271,17 @@ permalink: /posts/
 
     .tabs-container {
       margin: 1rem 0 2rem 0;
+    }
+
+    .post-entry-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .post-image img {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
     }
   }
 </style>
