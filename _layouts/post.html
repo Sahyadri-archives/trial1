@@ -39,14 +39,21 @@ layout: base
         </span>
 
         {% if page.subtitle %}
-          {% comment %} Extract the first name and convert to lowercase {% endcomment %}
-          {% assign author_parts = page.subtitle | split: ' ' %}
-          {% assign first_name_slug = author_parts[0] | downcase %}
+          {% comment %} Extract main author's first name slug {% endcomment %}
+          {% assign author1_parts = page.subtitle | split: ' ' %}
+          {% assign author1_slug = author1_parts[0] | downcase %}
           
           <h2 class="post-subheading">
-            By <a href="{{ '/profiles/' | relative_url }}{{ first_name_slug }}">{{ page.subtitle }}</a>
+            By <a href="{{ '/profiles/' | relative_url }}{{ author1_slug }}">{{ page.subtitle }}</a>{% if page.subtitle2 %}{% comment %} Extract co-author's first name slug {% endcomment %}{% assign author2_parts = page.subtitle2 | split: ' ' %}{% assign author2_slug = author2_parts[0] | downcase %} and <a href="{{ '/profiles/' | relative_url }}{{ author2_slug }}">{{ page.subtitle2 }}</a>{% endif %}
           </h2>
         {% endif %}
+
+        {% if page.image_id %}
+          <div class="post-image" style="margin: 20px 0; text-align: center;">
+            <img src="https://lh3.googleusercontent.com/d/{{ page.image_id }}" alt="{{ page.title }}" style="max-width: 100%; height: auto; border-radius: 4px;">
+          </div>
+        {% endif %}
+        
         <hr class="small">
       </div>
 
