@@ -2,7 +2,7 @@
 layout: post
 title: "Football Camp"
 date: 2025-08-21
-subtitle: "By Aarav Mitra (Grade 12)"
+subtitle: "Aarav Mitra (Grade 12)"
 category: August 2025
 image: "/assets/img/Newsletter/footballcamps.png"
 ---
