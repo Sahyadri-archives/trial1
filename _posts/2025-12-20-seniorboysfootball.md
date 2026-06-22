@@ -4,7 +4,7 @@ title: "Football Match: Senior Boys"
 date: 2025-12-20
 subtitle: "Maïan Rangad (Grade 11)"
 category: December 2025
-image: "/assets/img/Newsletter/football-fest.JPG"
+image: "1RgA6kOBxPSRDUTRHaloDzW8OIf3K4evU"
 ---
 
 On the final day the boys of Grades 11 and 12 faced the boys of Grades 9 and 10 in a Football match. Both the teams chose their most suitable players for one of the most awaited events of the Sports Fest. The spectators too were excited. 
