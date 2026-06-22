@@ -2,7 +2,7 @@
 layout: post
 title: "Shambhu Hill Cleanup"
 date: 2025-09-14
-subtitle: "By Aarav Mitra (Grade 12)"
+subtitle: "Aarav Mitra (Grade 12)"
 category: September 2025
 image: "/assets/img/Newsletter/shambhuhillcleanup.png"
 ---
