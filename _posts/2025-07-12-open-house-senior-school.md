@@ -2,7 +2,7 @@
 layout: post
 title: "Open House (Whole School)"
 date: 2025-07-12
-subtitle: "By Riddhim Inamke (Grade 11)"
+subtitle: "Riddhim Inamke (Grade 11)"
 category: August 2025
 ---
 
