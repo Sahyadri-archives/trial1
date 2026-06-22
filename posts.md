@@ -208,6 +208,7 @@ permalink: /posts/
     color: #5f745f;
     text-decoration: none;
     font-weight: 600;
+    font-familiy: Amatic Sc;
   }
 
   .post-subtitle a:hover {
