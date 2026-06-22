@@ -9,7 +9,7 @@ image: "/assets/img/Newsletter/crosscountry.jpg"
 
 Every year, Cross Country is a highly anticipated event. Students look forward to breaking previously set records or going slowly and enjoying the scenery. Either way, it is a time bubbling with excitement. 
 
-![Cross Country]({{ "/assets/img/Newsletter/crosscountry.jpg" | relative_url }})
+![Cross Country]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
 
 We are all familiar with the usual route - the run down the hill, into farms along the Lower Parikrama, through a village, back up Python Hill, and if you want to go for another few kilometres, the Upper Parikrama. However, this year the route was more campus-centric. It began at the School Gate and went to the Upper Parikrama, then moving downhill through Gundalwadi all the way to Ramdas Dada’s farm. We then headed back to school, went uphill again and ran another 2 rounds of the Upper Parikrama to conclude. Grades 4 and 5 ran 5 km while grades 6 and above ran 11 km.
 
