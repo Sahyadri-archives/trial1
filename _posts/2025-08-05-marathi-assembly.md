@@ -2,7 +2,7 @@
 layout: post
 title: "Marathi Assembly"
 date: 2025-08-05
-subtitle: "By Swara Bathe (Grade 11)"
+subtitle: "Swara Bathe (Grade 11)"
 category: August 2025
 image: "/assets/img/Newsletter/marathiassembly.png"
 ---
