@@ -2,9 +2,10 @@
 layout: post
 title: "Football Match: Senior Girls"
 date: 2025-12-18
-subtitle: "Ishita and Prisha (Grade 10)"
+subtitle: "Ishita" 
+subtitle2: "Prisha (Grade 10)"
 category: December 2025
-image: "/assets/img/Newsletter/Football _ Senior Girls .JPG"
+image: "14QEQCTCEBaEAA-xplsd8YV4bQhTQoO1l"
 ---
 
 It's a corner. Nayantara stands behind the ball, eyes fixed on the goal: Chick… Chick… BOOM! The ball soars in the air only to be perfectly cleared by Naina as it reaches the ground, and the ball is out once again.
