@@ -4,7 +4,7 @@ title: "Medical Outreach Program"
 date: 2025-08-05
 subtitle: "Reshma Akka"
 category: August 2025
-image: "/assets/img/Newsletter/medicaloutreach.png"
+image: "1_rwMHBbqkYLuPk2FXjp3y7YWQMOFuGFY"
 ---
 
 As part of the Medical Outreach, ASHA workers are being trained in prenatal best practices and overall well being of expectant mothers at the village level under the ‘the First 1000 days of life’ awareness initiative. 
