@@ -4,7 +4,7 @@ title: "Grade 8 Project: Animal Farm"
 date: 2025-08-21
 subtitle: "Asha (Grade 8)"
 category: August 2025
-image: "/assets/img/Newsletter/animalfarm.png"
+image: "1_pcGGsr5hO-oY-dvOHPhLIYXm3g3C1CB/"
 ---
 
 We, the 8th graders, are reading a famous English novella called ‘Animal Farm’ in English class. The ideology around which the book is centred is aptly named ‘Animalism’
