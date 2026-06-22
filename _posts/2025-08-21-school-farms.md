@@ -2,7 +2,7 @@
 layout: post
 title: "School Farms and Outreach"
 date: 2025-08-21
-subtitle: "By Deepa Akka"
+subtitle: "Deepa Akka"
 category: August 2025
 image: "/assets/img/Newsletter/ruraloutreach.png"
 ---
