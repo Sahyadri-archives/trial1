@@ -2,7 +2,7 @@
 layout: post
 title: "Discus Throw"
 date: 2025-12-20
-subtitle: "By Riddhim Inamké (Grade 11)"
+subtitle: "Riddhim Inamké (Grade 11)"
 category: December 2025
 image: "/assets/img/Newsletter/discus-fest.JPG"
 ---
