@@ -2,7 +2,7 @@
 layout: post
 title: "Basketball Match: Senior Girls"
 date: 2025-12-20
-subtitle: "By Reya Shah (Grade 11)"
+subtitle: "Reya Shah (Grade 11)"
 category: December 2025
 image: "/assets/img/Newsletter/girls-baski-fest.JPG"
 ---
