@@ -4,7 +4,7 @@ title: "Editorial Note"
 date: 2025-09-30
 subtitle: "Reya Shah (Grade 11)"
 category: September 2025
-image: "/assets/img/Newsletter/septembereditorialnote.png"
+image: "1TZb5xY-lM__cBCc1OIQuZZNZKKhqoVP2"
 pinned: true
 ---
 
