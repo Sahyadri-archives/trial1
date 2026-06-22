@@ -2,7 +2,7 @@
 layout: post
 title: "Editorial Note"
 date: 2026-01-31
-subtitle: "By Riddhim Inamke (Grade 11)"
+subtitle: "Riddhim Inamke (Grade 11)"
 category: January 2026
 pinned: true
 ---
