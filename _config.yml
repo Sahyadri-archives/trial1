@@ -1,5 +1,6 @@
-url: "https://connect.sahyadrischool.org"
-baseurl: ""
+url: "https://sahyadri-archives.github.io/"
+baseurl: "trial1/"
+title: Sahyadri Connect
 title: Sahyadri Connect
 
 # Your name to show in the footer
