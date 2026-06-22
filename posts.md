@@ -103,12 +103,11 @@ permalink: /posts/
                   </a>
 
                   {% if post.subtitle %}
-                    {% comment %} Extract main author's first name slug {% endcomment %}
                     {% assign author1_parts = post.subtitle | split: ' ' %}
                     {% assign author1_slug = author1_parts[0] | downcase %}
                     
                     <h4 class="post-subtitle" style="margin-top: 0.5rem; font-weight: inherit;">
-                      By <a href="{{ '/profiles/' | relative_url }}{{ author1_slug }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% comment %} Extract co-author's first name slug {% endcomment %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% assign author2_slug = author2_parts[0] | downcase %} and <a href="{{ '/profiles/' | relative_url }}{{ author2_slug }}">{{ post.subtitle2 }}</a>{% endif %}
+                      By <a href="{{ '/profiles/' | relative_url }}{{ author1_slug }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% assign author2_slug = author2_parts[0] | downcase %} and <a href="{{ '/profiles/' | relative_url }}{{ author2_slug }}">{{ post.subtitle2 }}</a>{% endif %}
                     </h4>
                   {% endif %}
 
@@ -182,9 +181,6 @@ permalink: /posts/
     border: none;
     outline: none;
     padding: 0.75rem 0;
-    font-size: 1.15rem;
-    font-weight: 500;
-    font-family: inherit;
     color: #718096;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -251,7 +247,6 @@ permalink: /posts/
     }
     
     .tab-link {
-      font-size: 1rem;
       padding: 0.5rem 0.25rem;
     }
 
