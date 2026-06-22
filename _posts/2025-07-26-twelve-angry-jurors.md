@@ -2,7 +2,7 @@
 layout: post
 title: "Twelve Angry Jurors"
 date: 2025-07-26
-subtitle: "By Nayantara (Grade 11)"
+subtitle: "Nayantara (Grade 11)"
 category: August 2025
 image: "/assets/img/Newsletter/12angryjurors.png"
 ---
