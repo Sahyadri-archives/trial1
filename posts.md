@@ -17,7 +17,8 @@ permalink: /posts/
         {% assign tab_label = "Archive" %}
       {% else %}
         {% assign start_yr = current_year | plus: 0 %}
-        {% assign short_end_yr = start_yr | plus: 1 | slice: 2, 2 %}
+        {% assign end_yr = start_yr | plus: 1 | append: "" %}
+        {% assign short_end_yr = end_yr | slice: 2, 2 %}
         {% assign tab_id = "ay-" | append: start_yr | append: "-" | append: short_end_yr %}
         {% assign tab_label = start_yr | append: "–" | append: short_end_yr %}
       {% endif %}
@@ -41,10 +42,11 @@ permalink: /posts/
   {% else %}
     {% assign start_yr = current_year | plus: 0 %}
     {% assign end_yr = start_yr | plus: 1 %}
-    {% assign short_end_yr = end_yr | slice: 2, 2 %}
+    {% assign end_yr_str = end_yr | append: "" %}
+    {% assign short_end_yr = end_yr_str | slice: 2, 2 %}
     
     {% assign academic_start_date = start_yr | append: "-06-01" %}
-    {% assign academic_end_date = end_yr | append: "-03-31" %}
+    {% assign academic_end_date = end_yr | append: "-05-31" %}
     {% assign panel_id = "ay-" | append: start_yr | append: "-" | append: short_end_yr %}
   {% endif %}
 
