@@ -9,7 +9,7 @@ image: "/assets/img/Newsletter/grade10dance.png"
 
 On August 12, 8 of us from Grade 10 – Shachi, Aarna, Zaara, Prisha, Kriti, Nehal, Ishita and I put on a spectacular and immersive dance performance.
 
-![Grade 10 Dance]({{ "/assets/img/Newsletter/grade10dance.png" | relative_url }})
+![Grade 10 Dance]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
 
 The show began with an introduction to our journey in classical dance. We then presented a description of the Brindavani Thillana – a four and a half minute classical music composition. We chose the music and choreographed the piece ourselves, aiming to highlight the technical aspects and the characteristic movements of the dance. 
 
