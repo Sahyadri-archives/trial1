@@ -2,7 +2,7 @@
 layout: post
 title: "Jaltarang Performance: Ripples in Rhythm"
 date: 2025-08-09
-subtitle: "By Ashrith Reddy (Grade 11)"
+subtitle: "Ashrith Reddy (Grade 11)"
 category: August 2025
 image: "/assets/img/Newsletter/jaltarang.png"
 ---
