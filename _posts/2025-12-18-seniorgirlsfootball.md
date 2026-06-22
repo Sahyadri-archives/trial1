@@ -2,7 +2,7 @@
 layout: post
 title: "Football Match: Senior Girls"
 date: 2025-12-18
-subtitle: "By Ishita and Prisha (Grade 10)"
+subtitle: "Ishita and Prisha (Grade 10)"
 category: December 2025
 image: "/assets/img/Newsletter/Football _ Senior Girls .JPG"
 ---
