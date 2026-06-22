@@ -2,7 +2,7 @@
 layout: post
 title: "Book Tasting at Phoenix Club"
 date: 2025-09-25
-subtitle: "By Aadya Tyagi (Grade 11)"
+subtitle: "Aadya Tyagi (Grade 11)"
 category: November 2025
 ---
 
