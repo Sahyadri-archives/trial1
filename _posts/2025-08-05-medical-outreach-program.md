@@ -2,7 +2,7 @@
 layout: post
 title: "Medical Outreach Program"
 date: 2025-08-05
-subtitle: "By Reshma Akka"
+subtitle: "Reshma Akka"
 category: August 2025
 image: "/assets/img/Newsletter/medicaloutreach.png"
 ---
