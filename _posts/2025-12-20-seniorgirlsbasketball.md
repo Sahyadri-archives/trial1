@@ -4,7 +4,7 @@ title: "Basketball Match: Senior Girls"
 date: 2025-12-20
 subtitle: "Reya Shah (Grade 11)"
 category: December 2025
-image: "/assets/img/Newsletter/girls-baski-fest.JPG"
+image: "1ZFBdyGa3t30TQgndMKCMVno3YkPrgoV_"
 ---
 
 The senior girls Basket Ball match where the girls of Grades 9 and 10 took on the girls of Grades 11 and 12 was by far the most awaited event for me. We, the Grades 11 and 12 team, had not practiced much together. Our goal was to enjoy the game and make the most of the experience. That said we had a few pre-match jitters and we then wondered whether we should have practiced more instead of showing up almost directly for the match.
