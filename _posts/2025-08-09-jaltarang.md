@@ -9,7 +9,7 @@ image: "/assets/img/Newsletter/jaltarang.png"
 
 On the ninth of August, two external artists visited school to perform for us as a part of the broader ‘Art and Literature fest’, which was all about celebrating the ‘poetry of life’ and the love for Art and Literature and Music as a whole.
 
-![Jaltarang]({{ "/assets/img/Newsletter/jaltarang.png" | relative_url }})
+![Jaltarang]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
 
 #### The Instruments and the Artists
 The Jaltarang was played by Pandit Milind Sharma Tulankar Ji. The Jaltarang is an instrument consisting of multiple (porcelain) bowls filled with different volumes of water and two (bamboo) sticks to produce notes of different frequencies. Changing the material of bowls and sticks can change the quality of the sound produced. Milind ji has experimented a lot with this fact to produce different melodies for different raags, song and music styles.
