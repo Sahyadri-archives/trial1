@@ -100,22 +100,27 @@ permalink: /posts/
                     <h3 class="post-title">
                       {{ post.title }}
                     </h3>
-                    {% if post.subtitle %}
-                      <h4 class="post-subtitle">
-                        {{ post.subtitle }}
-                      </h4>
-                    {% endif %}
                   </a>
+
+                  {% if post.subtitle %}
+                    {% comment %} Extract main author's first name slug {% endcomment %}
+                    {% assign author1_parts = post.subtitle | split: ' ' %}
+                    {% assign author1_slug = author1_parts[0] | downcase %}
+                    
+                    <h4 class="post-subtitle" style="margin-top: 0.5rem; font-weight: inherit;">
+                      By <a href="{{ '/profiles/' | relative_url }}{{ author1_slug }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% comment %} Extract co-author's first name slug {% endcomment %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% assign author2_slug = author2_parts[0] | downcase %} and <a href="{{ '/profiles/' | relative_url }}{{ author2_slug }}">{{ post.subtitle2 }}</a>{% endif %}
+                    </h4>
+                  {% endif %}
 
                   <p class="post-meta">
                     Posted on {{ post.date | date: site.date_format | default: "%B %d, %Y" }}
                   </p>
 
                   <div class="post-entry-container">
-                    {% if post.image %}
+                    {% if post.image_id %}
                       <div class="post-image">
                         <a href="{{ post.url | relative_url }}">
-                          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                          <img src="https://lh3.googleusercontent.com/d/{{ post.image_id }}" alt="{{ post.title }}">
                         </a>
                       </div>
                     {% endif %}
@@ -200,6 +205,16 @@ permalink: /posts/
     animation: fadeIn 0.4s ease;
   }
 
+  .post-subtitle a {
+    color: #5f745f;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .post-subtitle a:hover {
+    text-decoration: underline;
+  }
+
   .post-read-more {
     display: inline-block;
     margin-left: 0.5rem;
@@ -260,5 +275,5 @@ permalink: /posts/
 
     document.getElementById(panelId).classList.add("active");
     evt.currentTarget.classList.add("active");
-    
-    document
+  }
+</script>
