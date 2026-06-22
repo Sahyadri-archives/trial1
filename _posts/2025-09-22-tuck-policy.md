@@ -2,7 +2,7 @@
 layout: post
 title: "Simplifying Sahyadri: New Tuck Policy"
 date: 2025-09-22
-subtitle: "By Riddhim Inamke and Aarush Badruka (Grade 11)"
+subtitle: "Riddhim Inamke and Aarush Badruka (Grade 11)"
 category: September 2025
 ---
 
