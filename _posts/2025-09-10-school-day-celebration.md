@@ -2,7 +2,7 @@
 layout: post
 title: "School Day Celebration"
 date: 2025-09-10
-subtitle: "By Maian Rangad (Grade 11)"
+subtitle: "Maian Rangad (Grade 11)"
 category: September 2025
 ---
 
