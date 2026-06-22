@@ -1,6 +1,7 @@
 ---
 layout: base
 ---
+
 <style>
   /* Base style: Hide the back button by default (Desktops and Tablets) */
   .back-navigation {
@@ -38,8 +39,12 @@ layout: base
         </span>
 
         {% if page.subtitle %}
+          {% comment %} Extract the first name and convert to lowercase {% endcomment %}
+          {% assign author_parts = page.subtitle | split: ' ' %}
+          {% assign first_name_slug = author_parts[0] | downcase %}
+          
           <h2 class="post-subheading">
-            {{ page.subtitle }}
+            By <a href="{{ '/profiles/' | relative_url }}{{ first_name_slug }}">{{ page.subtitle }}</a>
           </h2>
         {% endif %}
         <hr class="small">
