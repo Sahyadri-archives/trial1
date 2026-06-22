@@ -2,7 +2,7 @@
 layout: post
 title: "Open House (Middle School)"
 date: 2025-08-21
-subtitle: "By Nishka Bhattar and Siddhant Sen (Grade 7)"
+subtitle: "Nishka Bhattar and Siddhant Sen (Grade 7)"
 category: August 2025
 ---
 
