@@ -2,7 +2,7 @@
 layout: post
 title: "Cross Country"
 date: 2025-12-28
-subtitle: "By Kaeya Gautam (Grade 10)"
+subtitle: "Kaeya Gautam (Grade 10)"
 category: December 2025
 image: "/assets/img/Newsletter/crosscountry.jpg"
 ---
