@@ -5,12 +5,12 @@ date: 2025-12-18
 subtitle: "Ishita" 
 subtitle2: "Prisha (Grade 10)"
 category: December 2025
-image: "14QEQCTCEBaEAA-xplsd8YV4bQhTQoO1l"
+image: 14QEQCTCEBaEAA-xplsd8YV4bQhTQoO1l
 ---
 
 It's a corner. Nayantara stands behind the ball, eyes fixed on the goal: Chick… Chick… BOOM! The ball soars in the air only to be perfectly cleared by Naina as it reaches the ground, and the ball is out once again.
 
-![Football Senior Girls]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
+![Football Senior Girls]({https://lh3.googleusercontent.com/d/{{ page.image }}})
 
 The 9-10th vs 11-12th girls’ football match, one of the first events of this year’s much-awaited three-day sports fest, was one packed with skill, camaraderie, and adrenaline.
  
