@@ -9,7 +9,7 @@ image: 1FL6vNWqFNyBjUHCKzonI3e_OTaIUvWVt
 
 The Art and Literature Fest 2025 began on the day India celebrated her 79th Independence Day. The Independence Day Assembly opened with a heartfelt recitation of one of Rabindranath Tagore's poems, “Let My Country Awake” by Amrit and other literature students from Grades 11 and 12. Subsequently, Zoya performed a moving rendition of a poem from ‘Letters from Gaza’ was followed by performance of Hindi translations of Nehru's iconic speech, ‘A Tryst With Destiny’, and Nelson Mandela's ‘I Am Prepared to Die’, by Shaurya and Prithvi from Grade 10. The assembly ended with a few Marathi songs and a Sanskrit chant by the junior classes.
 
-![Art and Literature Fest]({https://lh3.googleusercontent.com/d/{{ page.image }}})
+![Art and Literature Fest](https://lh3.googleusercontent.com/d/{{ page.image }})
 
 The assembly presented us with a chance to celebrate and cherish our independence, and explore the themes of independence and freedom from different perspectives from all over the world.
 
