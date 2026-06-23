@@ -34,12 +34,12 @@ layout: base
   <div class="row">
     <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
 
-      <div class="back-navigation">
-        <a href="#" id="back-button" onclick="window.history.back(); return false;">
-          <i class="fas fa-chevron-left"></i> 
-          Back
-        </a>
-      </div>
+      <div class="back-navigation mb-4">
+  <a href="/profiles" id="back-button" onclick="if(document.referrer !== '') { window.history.back(); return false; }">
+    <i class="fas fa-chevron-left"></i> 
+    Back
+  </a>
+</div>
 
       <div class="post-heading">
         <h1>{{ page.title }}</h1>
