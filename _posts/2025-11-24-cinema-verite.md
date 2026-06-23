@@ -9,7 +9,7 @@ image: 1fSk5xqUB5RRN4TwnQsqUd0zAJos-gJxq
 
 Everyone, in the school and otherwise, loves movies. This is why the seniors go to watch the movies screened for juniors, and the juniors glance behind the senior auditorium curtains to catch a glimpse of the movies screened for seniors before they are sent back. This is why some of us even scream in excitement while watching movies like ‘F1: The Movie’ or ‘Thunderbolts’. 
 
-![Film Club]({https://lh3.googleusercontent.com/d/{{ page.image }}})
+![Film Club](https://lh3.googleusercontent.com/d/{{ page.image }})
 
 But, beyond the Marvel and F1 films lies something deeper — a space to explore stories that challenge, inspire, and open our eyes to the world. There are people who would watch a movie to spite it, as also those who are willing to let their brains be messed up. These are the Film Club members.
 Yes, we, the Film Club members, would rather ditch the crowd piling up in the senior auditorium and watch a movie that the media hated or couldn't bear to watch. You might think we hate ourselves. But no—not at all. We want to question, to analyse, to challenge—or even to love and I say this boldly.
