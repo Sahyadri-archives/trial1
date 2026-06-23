@@ -5,13 +5,9 @@ layout: base
 <style>
   /* Force the back button to show on ALL devices */
   .back-navigation {
+    margin-top: 12.5vw;
     display: block !important;
   }
-
-  .post-heading {
-      margin-top: 12.5vw;
-  }
-
   /* Style targeting the author subheadings to use Amatic SC */
   .post-subheading {
     font-family: 'Amatic SC', cursive, sans-serif;
@@ -63,7 +59,7 @@ layout: base
 
         {% if page.image_id %}
           <div class="post-image" style="margin: 20px 0; text-align: center;">
-            <img src="https://docs.google.com/uc?export=view&id={{ page.image_id }}" alt="{{ page.title }}" style="max-width: 100%; height: auto; border-radius: 4px;">
+            <img src="https://docs.google.com/uc?export=view&id={ page.image_id }" alt="{{ page.title }}" style="max-width: 100%; height: auto; border-radius: 4px;">
           </div>
         {% endif %}
         
