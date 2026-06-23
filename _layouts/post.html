@@ -3,18 +3,9 @@ layout: base
 ---
 
 <style>
-  /* Base style: Hide the back button on Desktops and Tablets */
-  @media (min-width: 768px) {
-    .back-navigation {
-      display: none;
-    }
-  }
-
-  /* Show the back button on Mobile screens */
-  @media (max-width: 767px) {
-    .back-navigation {
-      display: block;
-    }
+  /* Force the back button to show on ALL devices */
+  .back-navigation {
+    display: block !important;
   }
 
   .post-heading {
