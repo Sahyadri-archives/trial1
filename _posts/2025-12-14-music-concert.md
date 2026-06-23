@@ -9,7 +9,7 @@ image: 1DAmPoia6meQh4ZCohUU7LSQc7wZwFjNo
 
 It was a hot, sunny afternoon on 14th December, 2025, when the music students of grades 9, 10 and 11 accompanied by Nikhil Sir, Vindhya Akka, and Sachin Sir, headed to the spectacular Savai Gandharva Bhimsen Mahotsav 2025, held at the held at the Maharashtriya Mandal Kreeda Sankul in at Pune. The music festival is the highlight of Pune’s cultural calendar. This year the festival not only featured a diverse lineup of veterans but it also focused on emerging talent.
 
-![Music Concert]({https://lh3.googleusercontent.com/d/{{ page.image }}})
+![Music Concert](https://lh3.googleusercontent.com/d/{{ page.image }})
 
 On arriving at the venue we had hot chai and with avid interest saw the philately exhibition. The stamps featured musicians who have played a major role in shaping Indian music. We then got ready to listen to legends. 
 
