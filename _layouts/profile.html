@@ -7,11 +7,11 @@ layout: base
     <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
 
       <div class="back-navigation mb-4">
-        <a href="/profiles" id="back-button">
-          <i class="fas fa-chevron-left"></i> 
-          Back
-        </a>
-      </div>
+  <a href="/profiles" id="back-button" onclick="if(document.referrer !== '') { window.history.back(); return false; }">
+    <i class="fas fa-chevron-left"></i> 
+    Back
+  </a>
+</div>
 
       <div class="profile-header row align-items-center mb-4">
         
