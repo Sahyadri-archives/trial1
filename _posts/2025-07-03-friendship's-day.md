@@ -4,12 +4,12 @@ title: "Friendship's Day"
 date: 2025-08-03
 subtitle: "Anvi Bharadwaj (Grade 9)"
 category: August 2025
-image: "1gTX0vXVVjQVDLM4v_3jBDD0r3bB3rkwC"
+image: 1gTX0vXVVjQVDLM4v_3jBDD0r3bB3rkwC
 ---
 
 Friendship Day is one of the most anticipated events in Sahyadri. As every year, it was hosted by the Grade 9 students. They picked the nostalgic theme of ‘cartoons’, which reflected in the decor, activities, and menu of the event. 
 
-![Friendship Day]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
+![Friendship Day](https://lh3.googleusercontent.com/d/{{ page.image }})
 
 #### Games and Activities
 There were multiple activities that students and teachers both enjoyed, from 3-legged race to “who's most likely to?” Cartoon trivia and Trust falls brought alive the message of the evening. 
