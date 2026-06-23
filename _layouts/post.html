@@ -3,9 +3,18 @@ layout: base
 ---
 
 <style>
-  /* Base style: Hide the back button by default (Desktops and Tablets) */
-  .back-navigation {
-    display: none;
+  /* Base style: Hide the back button on Desktops and Tablets */
+  @media (min-width: 768px) {
+    .back-navigation {
+      display: none;
+    }
+  }
+
+  /* Show the back button on Mobile screens */
+  @media (max-width: 767px) {
+    .back-navigation {
+      display: block;
+    }
   }
 
   .post-heading {
@@ -31,25 +40,18 @@ layout: base
   .post-subheading a:hover {
     text-decoration: underline;
   }
-
-  /* Mobile-only style: Show the button only on screens narrower than 768px */
-  @media (max-width: 767px) {
-    .back-navigation {
-      display: block; /* or 'flex' depending on your layout preference */
-    }
-  }
 </style>
 
 <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
   <div class="row">
     <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
 
-     <div class="back-navigation">
-  <a href="#" id="back-button" onclick="window.history.back(); return false;">
-    <i class="fas fa-chevron-left"></i> 
-    Back
-  </a>
-</div>
+      <div class="back-navigation">
+        <a href="#" id="back-button" onclick="window.history.back(); return false;">
+          <i class="fas fa-chevron-left"></i> 
+          Back
+        </a>
+      </div>
 
       <div class="post-heading">
         <h1>{{ page.title }}</h1>
@@ -70,7 +72,7 @@ layout: base
 
         {% if page.image_id %}
           <div class="post-image" style="margin: 20px 0; text-align: center;">
-            <img src="https://lh3.googleusercontent.com/d/{{ page.image_id }}" alt="{{ page.title }}" style="max-width: 100%; height: auto; border-radius: 4px;">
+            <img src="https://docs.google.com/uc?export=view&id={{ page.image_id }}" alt="{{ page.title }}" style="max-width: 100%; height: auto; border-radius: 4px;">
           </div>
         {% endif %}
         
@@ -137,11 +139,9 @@ layout: base
 
   <script>
 function goBack() {
-  // If there is history to go back to, do it
   if (document.referrer !== "") {
     window.history.back();
   } else {
-    // Optional: Fallback to your home or blog page if no history exists
     window.location.href = "{{ '/' | relative_url }}";
   }
 }
