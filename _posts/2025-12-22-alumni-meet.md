@@ -9,7 +9,7 @@ image: 1xKpmMkaglKHQL4PTfwaB2acjnc8TW4OB
 
 We used to wonder why Sahyadri had not had an Alumni Meet where we could connect with alumni and they with the school. Alumni not only have a special connection with Sahyadri but they also undertake a range of interesting actions that they can share with us. 
 
-![Alumni Meet]({https://lh3.googleusercontent.com/d/{{ page.image }}})
+![Alumni Meet](https://lh3.googleusercontent.com/d/{{ page.image }})
 
 On the 21st and 22nd of December we had the first Alumni Meet at Sahyadri. Around 80 alumni, ranging from the earliest to the most recent batch, attended the event. We had planned a range of activities including sports and folk-dance that they would have enjoyed during their time at Sahyadri. They also interacted with students and shared the memories they made at school and their experiences in the world beyond Sahyadri. 
 
