@@ -206,7 +206,7 @@ permalink: /posts/
 
   /* Modified subtitle style to feature Amatic SC font profile variables */
   .post-subtitle {
-    font-family: 'Amatic SC', cursive, sans-serif;
+    font-family: 'Amatic SC', cursive, sans-serif !important;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -291,7 +291,6 @@ permalink: /posts/
     .post-image img {
       width: 100%;
       height: auto;
-      max-height: 200px;
     }
   }
 </style>
