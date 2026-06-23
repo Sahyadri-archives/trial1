@@ -59,7 +59,9 @@ layout: base
 
         {% if page.image_id %}
           <div class="post-image" style="margin: 20px 0; text-align: center;">
-            <img src="https://docs.google.com/uc?export=view&id={{ page.image_id }}" alt="{{ page.title }}" style="max-width: 100%; height: auto; border-radius: 4px;">
+            <a href="{{ post.url | relative_url }}">
+              <img src="https://lh3.googleusercontent.com/d/{{ post.image }}" alt="{{ post.title }}">
+            </a>
           </div>
         {% endif %}
         
