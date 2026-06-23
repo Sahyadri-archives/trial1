@@ -9,7 +9,7 @@ image: 1C0It0wcKjTpTk_UStB_EyotO__Ks48cI
 
 On a quiet Sunday morning, when most of us would usually be catching up on sleep, a group of students from Grades 11 and 12, along with Sachin Sir and Sekhar Sir, decided to spend it differently; by giving back to the environment. At 6:15 a.m., the team set out for Shambhu Hill, a place close to Sahyadri that is home to the Shiv Shambho Mahadeo temple.
 
-![Shambhu Hill Cleanup]({https://lh3.googleusercontent.com/d/{{ page.image }}})
+![Shambhu Hill Cleanup](https://lh3.googleusercontent.com/d/{{ page.image }})
 
 What we found there was deeply disturbing; instead of being a serene space of worship, the hill was littered with everything imaginable: from plastic wrappers, bottles, and plates to alcohol bottles and even more shocking waste. The state of neglect had turned what should have been a peaceful local temple into a dumping ground.
 
