@@ -4,12 +4,12 @@ title: "An Essence of a Sahyadri Sports Fest"
 date: 2025-12-20
 subtitle: "Yuana Garg (Grade 10)"
 category: December 2025
-image: "1B96jIAgio5XPr_qAHgTjOxq2C41cskJA"
+image: 1B96jIAgio5XPr_qAHgTjOxq2C41cskJA
 ---
 
 As the sun rose to the marching of our footsteps, the first day of the Sports Fest began with a bang. The day witnessed a field packed with energy, excitement, and the spirit of friendly competition.
 
-![Sports Fest]({"https://lh3.googleusercontent.com/d/{{ page.image }}"})
+![Sports Fest]({https://lh3.googleusercontent.com/d/{{ page.image }}})
 
 From the early morning events like the juniors’ Kho-Kho match (first ever in the school’s history) and the 200m run for the junior girls, every moment kept the audience engaged and entertained.
 
