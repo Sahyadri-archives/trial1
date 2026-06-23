@@ -9,7 +9,7 @@ image: 10mfr_b00RK5IlRW1ELHtNJGreGpXpw8l
 
 On 6th July, Grade 11 set out for a hike to Shringeshwar. We started early in the morning, the air still cool from the night. The sky was cloudy, and soon a light drizzle began to fall. The gentle rain added freshness to the air, making the green hills shine and the earthy smell of wet soil fill our senses. 
 
-![Dorm Hike]({https://lh3.googleusercontent.com/d/{{ page.image }}})
+![Dorm Hike](https://lh3.googleusercontent.com/d/{{ page.image }})
 
 Walking together with friends, our shoes splashing through little puddles, was pure joy. Before leaving, the school kitchen had packed us a simple but delicious lunch—Thepla and Aloo Ki Sabji. Carrying our food in our backpacks, we felt ready for the day’s adventure ahead.
 
