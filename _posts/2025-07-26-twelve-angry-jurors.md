@@ -9,7 +9,7 @@ image: 1HIMJVtcxCU24W0djPx4D6mDTOUB17_00
 
 ‘Twelve Angry Jurors’ was a play put up by Grade 11 on the 26th of July. It was an adaptation of primarily two films, the American film ‘Twelve Angry Men’ and its Indian counterpart, ‘Ek Ruka Hua Faisla’. 
 
-![12 Angry Jurors]({https://lh3.googleusercontent.com/d/{{ page.image }}})
+![12 Angry Jurors](https://lh3.googleusercontent.com/d/{{ page.image }})
 
 #### The Plot
 The plot revolves around a young boy who has been accused of murdering his father, and it is up to 12 jurors to decide whether he is guilty or not guilty; if he is found guilty he shall receive a death sentence. This decision can only be made if all 12 are in agreement. The play shows the coming together of two extremes. The students beautifully encompassed the theme of the story which emphasised on setting one's personal prejudices and past experiences aside in order to see the world through the eyes of a young 19-year-old boy.
