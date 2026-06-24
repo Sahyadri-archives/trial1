@@ -60,7 +60,13 @@ permalink: /posts/
       
       <aside class="toc-sidebar">
         <nav class="toc-card">
-          <h2 class="toc-title">Editions</h2>
+          <h2 class="toc-title">
+            {% if current_year == "archive" %}
+              Archive Categories
+            {% else %}
+              {{ start_yr }}–{{ short_end_yr }} Categories
+            {% endif %}
+          </h2>
           <ul class="toc-list">
             {% for group in grouped_posts %}
               {% assign has_current_posts = false %}
