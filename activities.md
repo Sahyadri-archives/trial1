@@ -86,7 +86,12 @@ permalink: /activities/
         {% assign total_displayed_posts = 0 %}
 
         {% for group in grouped_posts %}
-          {% assign sorted_posts = group.items | sort: "date" | reverse %}
+          {% comment %} Combine date sorting with pinned logic like the Newsletter {% endcomment %}
+          {% assign date_sorted_posts = group.items | sort: "date" | reverse %}
+          {% assign pinned_posts = date_sorted_posts | where: "pinned", true %}
+          {% assign normal_posts = date_sorted_posts | where_exp: "item", "item.pinned != true" %}
+          {% assign sorted_posts = pinned_posts | concat: normal_posts %}
+          
           {% assign current_group_count = 0 %}
           
           {% capture group_output %}
@@ -97,13 +102,20 @@ permalink: /activities/
                 
                 <article class="post-preview">
                   <a href="{{ post.url | relative_url }}" style="text-decoration: none;">
-                    <h3 class="post-title">{{ post.title }}</h3>
-                    {% if post.subtitle %}
-                      <h4 class="post-subtitle" style="font-family: 'Montserrat'; font-weight: 300; color: #777; font-size: 1.1em; margin-top: -5px;">
-                        {{ post.subtitle }}
-                      </h4>
-                    {% endif %}
+                    <h3 class="post-title">
+                      {{ post.title }}
+                    </h3>
                   </a>
+
+                  {% if post.subtitle %}
+                    {% assign author1_parts = post.subtitle | split: ' ' %}
+                    {% assign author1_slug = author1_parts[0] | downcase %}
+                    {% assign profile1_url = '/profiles/' | append: author1_slug | relative_url %}
+                    
+                    <h4 class="post-subtitle">
+                      By <a href="{{ profile1_url }}">{{ post.subtitle }}</a>{% if post.subtitle2 %}{% assign author2_parts = post.subtitle2 | split: ' ' %}{% assign author2_slug = author2_parts[0] | downcase %}{% assign profile2_url = '/profiles/' | append: author2_slug | relative_url %} and <a href="{{ profile2_url }}">{{ post.subtitle2 }}</a>{% endif %}
+                    </h4>
+                  {% endif %}
                   
                   <p class="post-meta">
                     Posted on {{ post.date | date: site.date_format | default: "%B %d, %Y" }}
@@ -198,6 +210,33 @@ permalink: /activities/
     animation: fadeIn 0.4s ease;
   }
 
+  /* Modified subtitle style to feature Amatic SC font profile variables */
+  .post-subtitle {
+    font-family: 'Amatic SC', cursive, sans-serif !important;
+  }
+
+  .post-subtitle a {
+    font-family: inherit;
+    color: #5f745f;
+    text-decoration: none;
+  }
+
+  .post-subtitle a:hover {
+    text-decoration: underline;
+  }
+
+  .post-entry-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+
+  .post-image img {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
   .post-read-more {
     display: inline-block;
     margin-left: 0.5rem;
@@ -240,6 +279,16 @@ permalink: /activities/
 
     .tabs-container {
       margin: 1rem 0 2rem 0;
+    }
+
+    .post-entry-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .post-image img {
+      width: 100%;
+      height: auto;
     }
   }
 </style>
