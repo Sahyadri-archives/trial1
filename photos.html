@@ -8,28 +8,35 @@ subtitle: Click on thumbnail to open the album
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* 1. FORCE THE LAYOUT TO BE FULL WIDTH AND REMOVE THE THEME'S OFFSETS */
-        .container-md {
+        /* 1. FORCE THE LAYOUT TO BE FULL WIDTH AND REMOVE ALL THEME OFFSETS */
+        .container, .container-md, .container-fluid {
             max-width: 100% !important;
             padding: 0 !important;
         }
         
-        /* Remove Beautiful Jekyll's default column padding/offsets for this page */
-        .col-xl-8.offset-xl-2, .col-lg-10.offset-lg-1 {
+        /* Remove Beautiful Jekyll's default column padding/offsets for this page across ALL screen sizes */
+        .col-xl-8.offset-xl-2, 
+        .col-lg-10.offset-lg-1, 
+        .col-lg-8.offset-lg-2, 
+        .col-md-10.offset-md-1,
+        .col-md-8.offset-md-2 {
             max-width: 100% !important;
             margin-left: 0 !important;
+            margin-right: 0 !important;
             flex: 0 0 100% !important;
+            padding: 0 !important;
         }
 
         /* 2. MAIN CONTAINER */
         .photos-page-container {
             width: 100%;
-            max-width: 1400px;
+            max-width: 1200px; /* Constrained slightly so it doesn't stretch infinitely on ultrawide monitors */
             margin: 30px auto;
-            padding: 0 2% !important;
+            padding: 0 20px !important;
+            box-sizing: border-box;
         }
 
-        /* 3. HORIZONTAL NAVIGATION (Replacing the TOC Sidebar) */
+        /* 3. HORIZONTAL NAVIGATION */
         .sub-nav-options {
             width: 100%;
             margin: 0 auto 3rem auto;
@@ -63,23 +70,24 @@ subtitle: Click on thumbnail to open the album
             font-weight: bold;
         }
 
-        /* 4. PHOTO CONTENT */
+        /* 4. PHOTO CONTENT - Upgraded to CSS Grid for reliable sizing */
         .photos-content {
             width: 100%;
         }
 
         .album-grid {
-            display: flex;
-            flex-wrap: wrap; 
-            gap: 20px; 
-            justify-content: center;
+            display: grid;
+            /* This automatically fits as many ~280px thumbnails as possible per row */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px; 
+            width: 100%;
         }
 
         .album-item {
-            flex: 0 0 45%; 
-            margin-bottom: 20px;
+            width: 100%;
             display: flex;
             flex-direction: column;
+            margin: 0;
         }
 
         .album-item img {
@@ -100,8 +108,9 @@ subtitle: Click on thumbnail to open the album
             font-size: 1.1rem !important;
             text-align: center;
             white-space: normal; 
-            margin-top: 8px;
+            margin-top: 10px;
             color: #4a5568;
+            line-height: 1.3;
         }
 
         /* 5. MOBILE ADJUSTMENTS */
@@ -110,9 +119,10 @@ subtitle: Click on thumbnail to open the album
                 gap: 1.5rem;
             }
 
-            .album-item {
-                flex: 0 0 45%; 
-                min-width: 140px; 
+            .album-grid {
+                /* On smaller screens, drop the minimum size to allow 2 thumbnails side-by-side */
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 15px;
             }
         }
         
@@ -120,7 +130,23 @@ subtitle: Click on thumbnail to open the album
 
         .load-more-container {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .btn-load-more {
+            background-color: #5f745f;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-load-more:hover {
+            background-color: #4a5b4a;
         }
     </style>
 </head>
@@ -131,7 +157,7 @@ subtitle: Click on thumbnail to open the album
         <nav class="sub-nav-options">
             <ul class="sub-nav-list" id="year-toc">
                 <li class="active" onclick="filterAcademicYear('2025-26', this)">2025-26</li>
-                </ul>
+            </ul>
         </nav>
 
         <div class="photos-content">
