@@ -144,7 +144,7 @@ permalink: /posts/
             
             <section class="term-section" id="{{ year_id }}">
               <h2 class="category-heading">
-                {{ year_label }}
+                {{ group.name | default: "General Updates" | upcase }}
               </h2>
 
               {{ year_output }}
