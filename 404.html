@@ -11,3 +11,14 @@ permalink: /404.html
 
   <img src="{{ 'assets/img/404-southpark.jpg' | relative_url }}" alt="Not found" />
 </div>
+
+<script>
+  // Get the path the user attempted to visit
+  const currentPath = window.location.pathname;
+
+  // Check if the path includes the profiles directory
+  if (currentPath.includes('/profiles/')) {
+    // Redirect to your specific landing page
+    window.location.replace('/profiles-directory.html'); 
+  }
+</script>
