@@ -1,7 +1,7 @@
 ---
 layout: events
 title: "Information Literacy - Classes 4 & 5"
-subtitle: by Sayantan Sen (Founder Digital Safety India, Parent of Sahyadri School)
+subtitle: Sayantan Sen (Founder Digital Safety India, Parent of Sahyadri School)
 date: 2026-02-21
 category: Digital Safety Workshop
 ---
