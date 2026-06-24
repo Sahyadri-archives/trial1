@@ -8,55 +8,56 @@ subtitle: Click on thumbnail to open the album
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* 1. FORCE THE LAYOUT TO BE FULL WIDTH AND REMOVE ALL THEME OFFSETS */
-        .container, .container-md, .container-fluid {
+        /* 1. AGGRESSIVELY RESET THEME OFFSETS AND MARGINS */
+        .container, .container-md, .container-fluid, .row {
             max-width: 100% !important;
             padding: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
         }
         
-        /* Remove Beautiful Jekyll's default column padding/offsets for this page across ALL screen sizes */
-        .col-xl-8.offset-xl-2, 
-        .col-lg-10.offset-lg-1, 
-        .col-lg-8.offset-lg-2, 
-        .col-md-10.offset-md-1,
-        .col-md-8.offset-md-2 {
+        [class*="col-"] {
             max-width: 100% !important;
-            margin-left: 0 !important;
-            margin-right: 0 !important;
             flex: 0 0 100% !important;
+            margin: 0 !important;
             padding: 0 !important;
         }
 
-        /* 2. MAIN CONTAINER */
+        /* 2. MAIN CONTAINER - Forced block to completely break any old side-by-side flex layout */
         .photos-page-container {
-            width: 100%;
-            max-width: 1200px; /* Constrained slightly so it doesn't stretch infinitely on ultrawide monitors */
-            margin: 30px auto;
+            display: block !important; 
+            width: 100% !important;
+            max-width: 1200px; 
+            margin: 30px auto !important;
             padding: 0 20px !important;
             box-sizing: border-box;
         }
 
-        /* 3. HORIZONTAL NAVIGATION */
+        /* 3. HORIZONTAL NAVIGATION - Forced Center */
         .sub-nav-options {
-            width: 100%;
-            margin: 0 auto 3rem auto;
+            display: block !important;
+            width: 100% !important;
+            margin: 0 auto 3rem auto !important;
             padding-bottom: 1rem;
             border-bottom: 1px solid #e2e8f0;
+            text-align: center;
         }
 
         .sub-nav-list {
-            display: flex;
-            justify-content: center;
+            display: flex !important;
+            justify-content: center !important; /* This strictly centers the years */
+            align-items: center !important;
+            width: 100% !important;
             gap: 2.5rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
             flex-wrap: wrap;
         }
 
         .sub-nav-list li {
             font-family: 'Amatic SC', cursive !important;
-            font-size: 1.8rem !important;
+            font-size: 2rem !important;
             color: #718096;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
@@ -70,15 +71,16 @@ subtitle: Click on thumbnail to open the album
             font-weight: bold;
         }
 
-        /* 4. PHOTO CONTENT - Upgraded to CSS Grid for reliable sizing */
+        /* 4. PHOTO CONTENT GRID */
         .photos-content {
-            width: 100%;
+            display: block !important;
+            width: 100% !important;
         }
 
         .album-grid {
             display: grid;
-            /* This automatically fits as many ~280px thumbnails as possible per row */
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            justify-content: center; /* Centers the grid if it doesn't span full width */
             gap: 30px; 
             width: 100%;
         }
@@ -120,7 +122,6 @@ subtitle: Click on thumbnail to open the album
             }
 
             .album-grid {
-                /* On smaller screens, drop the minimum size to allow 2 thumbnails side-by-side */
                 grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
                 gap: 15px;
             }
