@@ -7,7 +7,7 @@ subtitle: Click on thumbnail to open the album
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
+    <style>
         /* 1. FORCE THE LAYOUT TO BE FULL WIDTH AND REMOVE THE THEME'S OFFSETS */
         .container-md {
             max-width: 100% !important;
@@ -21,147 +21,118 @@ subtitle: Click on thumbnail to open the album
             flex: 0 0 100% !important;
         }
 
-       /* 2. THE CLEAN CONTAINER */
-/* 2. MAIN CONTAINER */
-.photos-page-container {
-    display: flex;
-    flex-wrap: nowrap; /* Sidebar and Content stay side-by-side */
-    gap: 3%;
-    width: 100%;
-    max-width: 1400px;
-    margin: 30px auto;
-    padding: 0 2% !important;
-}
-
-/* 3. SIDEBAR */
-.toc-sidebar {
-    
-    flex: 0 0 20%; /* Sidebar takes 20% of the screen width */
-    min-width: 120px; /* Prevents it from getting too skinny */
-    position: sticky;
-    top: 20px;
-    background: #c5d1c0 !important;
-    padding: 25px !important;
-    border-radius: 15px !important;
-    border: none !important;
-}
-        /* Fix the internal card if it's still rendering */
-        .toc-card {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
+        /* 2. MAIN CONTAINER */
+        .photos-page-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 2% !important;
         }
 
-        .toc-title {
+        /* 3. HORIZONTAL NAVIGATION (Replacing the TOC Sidebar) */
+        .sub-nav-options {
+            width: 100%;
+            margin: 0 auto 3rem auto;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .sub-nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        .sub-nav-list li {
             font-family: 'Amatic SC', cursive !important;
-            font-size: 2.2rem !important;
-            margin: 0 0 15px 0 !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-            padding-bottom: 10px;
-            color: #404040 !important;
-        }
-
-        .toc-list {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-
-        .toc-list li {
-            padding: 8px 0 !important;
-            font-family: 'Amatic SC', cursive !important;
-            font-size: 1.7rem !important;
+            font-size: 1.8rem !important;
+            color: #718096;
             cursor: pointer;
-            color: #404040 !important;
-            transition: all 0.2s ease;
+            transition: all 0.2s ease-in-out;
+            padding-bottom: 5px;
+            border-bottom: 3px solid transparent;
         }
 
-        .toc-list li:hover, .toc-list li.active {
-            color: #ffffff !important;
+        .sub-nav-list li:hover, .sub-nav-list li.active {
+            color: #5f745f !important;
+            border-bottom: 3px solid #5f745f;
             font-weight: bold;
         }
 
-     /* 4. PHOTO CONTENT */
-.photos-content {
-    flex: 1; /* Takes up the remaining 80% */
-}
+        /* 4. PHOTO CONTENT */
+        .photos-content {
+            width: 100%;
+        }
 
-.album-grid {
-    display: flex;
-    flex-wrap: wrap; /* This allows multiple rows */
-    gap: 20px; /* Space between albums */
-}
+        .album-grid {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 20px; 
+            justify-content: center;
+        }
 
-.album-item {
-    /* Adjust these percentages to control how many photos per row */
-    /* 30% = ~3 per row, 45% = ~2 per row, 22% = ~4 per row */
-    flex: 0 0 45%; 
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
+        .album-item {
+            flex: 0 0 45%; 
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
 
-.album-item img {
-    width: 100%; /* Image fills the 100% width of the container */
-    height: auto;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    border-radius: 12px;
-}
+        .album-item img {
+            width: 100%; 
+            height: auto;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
 
-.album-item figcaption {
-    font-size: 1.1rem !important;
-    text-align: center;
-    white-space: normal; /* Allows text to wrap to new lines */
-    margin-top: 8px;
-}
-       /* 5. MOBILE ADJUSTMENTS */
-@media (max-width: 992px) {
-    .photos-page-container {
-        flex-direction: column; /* Sidebar goes to the TOP */
-        align-items: center;
-        gap: 20px;
-    }
+        .album-item img:hover {
+            transform: translateY(-3px);
+        }
 
-    .toc-sidebar {
-        flex: 0 0 auto;
-        width: 100%; /* Sidebar takes full width at the top */
-        position: relative !important;
-        top: 0 !important;
-        margin-bottom: 20px;
-    }
+        .album-item figcaption {
+            font-size: 1.1rem !important;
+            text-align: center;
+            white-space: normal; 
+            margin-top: 8px;
+            color: #4a5568;
+        }
 
-    .album-grid {
-        justify-content: center; /* Center the photos on mobile */
-    }
+        /* 5. MOBILE ADJUSTMENTS */
+        @media (max-width: 992px) {
+            .sub-nav-list {
+                gap: 1.5rem;
+            }
 
-    .album-item {
-        /* Percentage-based: 45% means 2 photos per row on mobile */
-        flex: 0 0 45%; 
-        min-width: 140px; /* Prevents them from getting too tiny */
-    }
-
-    .toc-title { font-size: 1.8rem !important; }
-    .toc-list li { font-size: 1.4rem !important; }
-}
+            .album-item {
+                flex: 0 0 45%; 
+                min-width: 140px; 
+            }
+        }
         
         .hidden-item { display: none !important; }
+
+        .load-more-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 
 <body>
     <div class="photos-page-container">
         
-        <aside class="toc-sidebar">
-            <nav class="toc-card">
-                <h2 class="toc-title">Academic Years</h2>
-                <ul class="toc-list" id="year-toc">
-                    <li class="active" onclick="filterAcademicYear('2025-26', this)">2025-26</li>
+        <nav class="sub-nav-options">
+            <ul class="sub-nav-list" id="year-toc">
+                <li class="active" onclick="filterAcademicYear('2025-26', this)">2025-26</li>
                 </ul>
-            </nav>
-        </aside>
+        </nav>
 
         <div class="photos-content">
             <div class="album-grid" id="main-grid">
@@ -376,7 +347,7 @@ subtitle: Click on thumbnail to open the album
                     <figcaption>Environment Day, 12th - 13th June 2025</figcaption>
                 </figure>
 
-                </div>
+            </div>
 
             <div class="load-more-container">
                 <button id="load-more-btn" class="btn-load-more">Load More</button>
@@ -394,10 +365,9 @@ subtitle: Click on thumbnail to open the album
 
         currentYearFilter = year;
         const allItems = Array.from(document.querySelectorAll('.album-item'));
-        const btn = document.getElementById('load-more-btn');
-
-        // 1. Update Active state in Sidebar
-        document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
+        
+        // 1. Update Active state in the new Sub-Nav
+        document.querySelectorAll('.sub-nav-list li').forEach(li => li.classList.remove('active'));
         if(element) element.classList.add('active');
 
         // 2. Hide everything initially
@@ -438,7 +408,8 @@ subtitle: Click on thumbnail to open the album
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-        filterAcademicYear('2025-26', document.querySelector('.toc-list li.active'));
+        // Updated to target the new sub-nav-list active element
+        filterAcademicYear('2025-26', document.querySelector('.sub-nav-list li.active'));
     });
 </script>
 </body>
