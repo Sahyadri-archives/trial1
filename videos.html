@@ -8,168 +8,168 @@ subtitle: Click on the thumbnail to watch
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-    /* 1. THEME OVERRIDES: FORCING FULL-WIDTH */
-    .container-md { 
-        max-width: 100% !important; 
-        padding: 0 !important; 
-    }
-    
-    .col-xl-8.offset-xl-2, .col-lg-10.offset-lg-1 {
-        max-width: 100% !important; 
-        margin-left: 0 !important; 
-        flex: 0 0 100% !important;
-    }
-
-    /* 2. LAYOUT CONTAINER */
-    .videos-page-container {
-        display: flex;
-        flex-direction: row; /* Sidebar left, Content right */
-        gap: 30px;
-        align-items: flex-start;
-        margin-top: 30px;
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 4% !important;
-        box-sizing: border-box;
-    }
-
-    /* 3. SIDEBAR STYLING */
-    .toc-sidebar {
-        flex: 0 0 240px; 
-        position: sticky;
-        top: 100px;
-        background: #c5d1c0 !important;
-        padding: 25px !important;
-        border-radius: 15px !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-        z-index: 10;
-    }
-
-    .toc-title {
-        font-family: 'Amatic SC', cursive !important;
-        font-size: 2.2rem !important;
-        margin: 0 0 15px 0 !important;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-        padding-bottom: 10px;
-        color: #404040 !important;
-        text-transform: uppercase;
-    }
-
-    .toc-list { 
-        list-style: none !important; 
-        padding: 0 !important; 
-        margin: 0 !important; 
-    }
-
-    .toc-list li {
-        padding: 8px 0 !important;
-        font-family: 'Amatic SC', cursive !important;
-        font-size: 1.7rem !important;
-        cursor: pointer;
-        color: #404040 !important;
-        transition: all 0.2s ease;
-    }
-
-    .toc-list li:hover, .toc-list li.active { 
-        color: #ffffff !important; 
-        font-weight: bold; 
-    }
-
-    /* 4. VIDEO CONTENT AREA */
-    .videos-content { 
-        flex: 1; 
-        min-width: 0; 
-    }
-
-    .video-grid {
-        display: flex;
-        flex-wrap: wrap; /* Allows multiple rows */
-        gap: 20px;
-        width: 100%;
-    }
-
-    /* Percentage-based sizing for flexibility */
-    .video-item {
-        flex: 0 0 45%; /* 2 videos per row on desktop */
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        min-width: 250px;
-    }
-
-    .video-wrapper {
-        display: block;
-        width: 100%;
-        aspect-ratio: 16 / 9; /* Standard video widescreen ratio */
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        background: #000;
-        cursor: pointer;
-    }
-
-    .video-wrapper img { 
-        width: 100%; 
-        height: 100%; 
-        object-fit: cover; 
-    }
-
-    .video-item figcaption {
-        margin-top: 12px;
-        font-family:  'Amatic SC', cursive !important;
-        font-size: 1.4rem !important;
-        text-align: center;
-        color: #444;
-        line-height: 1.2;
-        white-space: normal; /* Ensures text wraps to new lines */
-    }
-
-    /* 5. MOBILE ADJUSTMENTS */
-    @media (max-width: 992px) {
-        .videos-page-container {
-            flex-direction: column; /* Move sidebar to TOP */
-            align-items: center;
-        }
-
-        .toc-sidebar {
-            flex: 0 0 auto;
+        /* 1. AGGRESSIVELY RESET THEME OFFSETS AND MARGINS */
+        .container, .container-md, .container-fluid, .row {
+            max-width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
             width: 100% !important;
-            position: relative !important;
-            top: 0 !important;
-            margin-bottom: 30px !important;
-        }
-
-        .video-item {
-            flex: 0 0 47%; /* 2 videos per row on mobile */
-            min-width: 160px;
         }
         
-        .toc-title { font-size: 1.8rem !important; }
-        .toc-list li { font-size: 1.4rem !important; }
-    }
-
-    @media (max-width: 480px) {
-        .video-item {
-            flex: 0 0 100%; /* 1 video per row on small phones */
+        [class*="col-"] {
+            max-width: 100% !important;
+            flex: 0 0 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
-    }
 
-    /* Utility */
-    .hidden-item { display: none !important; }
-</style>
+        /* 2. MAIN CONTAINER - Forced block to break old side-by-side flex layout */
+        .videos-page-container {
+            display: block !important; 
+            width: 100% !important;
+            max-width: 1200px; 
+            margin: 30px auto !important;
+            padding: 0 20px !important;
+            box-sizing: border-box;
+        }
+
+        /* 3. HORIZONTAL NAVIGATION - Forced Center */
+        .sub-nav-options {
+            display: block !important;
+            width: 100% !important;
+            margin: 0 auto 3rem auto !important;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .sub-nav-list {
+            display: flex !important;
+            justify-content: center !important; /* Strictly centers the years */
+            align-items: center !important;
+            width: 100% !important;
+            gap: 2.5rem;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            flex-wrap: wrap;
+        }
+
+        .sub-nav-list li {
+            font-family: 'Amatic SC', cursive !important;
+            font-size: 2rem !important;
+            color: #718096;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            padding-bottom: 5px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .sub-nav-list li:hover, .sub-nav-list li.active {
+            color: #5f745f !important;
+            border-bottom: 3px solid #5f745f;
+            font-weight: bold;
+        }
+
+        /* 4. VIDEO CONTENT GRID */
+        .videos-content {
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .video-grid {
+            display: grid;
+            /* Videos look slightly better a bit wider than photos, so using 320px min */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            justify-content: center;
+            gap: 30px; 
+            width: 100%;
+        }
+
+        .video-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .video-wrapper {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Standard video widescreen ratio */
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: #000;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: translateY(-3px);
+        }
+
+        .video-wrapper img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+
+        .video-item figcaption {
+            font-size: 1.2rem !important;
+            text-align: center;
+            white-space: normal; 
+            margin-top: 12px;
+            color: #4a5568;
+            line-height: 1.3;
+        }
+
+        /* 5. MOBILE ADJUSTMENTS */
+        @media (max-width: 992px) {
+            .sub-nav-list {
+                gap: 1.5rem;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 20px;
+            }
+        }
+        
+        .hidden-item { display: none !important; }
+
+        .load-more-container {
+            text-align: center;
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .btn-load-more {
+            background-color: #5f745f;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-load-more:hover {
+            background-color: #4a5b4a;
+        }
+    </style>
 </head>
 
 <body>
     <div class="videos-page-container">
         
-        <aside class="toc-sidebar">
-            <h2 class="toc-title">Academic Years</h2>
-            <ul class="toc-list">
+        <nav class="sub-nav-options">
+            <ul class="sub-nav-list" id="year-toc">
                 <li class="active" onclick="filterVideos('2025-26', this)">2025-26</li>
                 <li onclick="filterVideos('2024-25', this)">2024-25</li>
             </ul>
-        </aside>
+        </nav>
 
         <div class="videos-content">
             <div class="video-grid" id="videoGrid">
@@ -323,8 +323,8 @@ subtitle: Click on the thumbnail to watch
 
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <button id="load-more-btn" style="background:#6d8571; color:white; border:none; padding:12px 35px; border-radius:25px; font-family:'Amatic SC'; font-size:1.6rem; cursor:pointer;">
+            <div class="load-more-container">
+                <button id="load-more-btn" class="btn-load-more" style="background:#6d8571; color:white; border:none; padding:12px 35px; border-radius:25px; font-family:'Amatic SC'; font-size:1.6rem; cursor:pointer;">
                     Load More
                 </button>
             </div>
@@ -332,17 +332,16 @@ subtitle: Click on the thumbnail to watch
     </div>
 
     <script>
-    const itemsPerPage = 10; // Adjusted to match photos for consistency
+    const itemsPerPage = 10;
 
     function filterVideos(year, element) {
         // 1. INSTANT SCROLL TO TOP
-        // Triggers whenever a new year is selected from the sidebar
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         const allItems = Array.from(document.querySelectorAll('.video-item'));
         
-        // 2. Highlight active sidebar item
-        document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
+        // 2. Highlight active sub-nav item
+        document.querySelectorAll('.sub-nav-list li').forEach(li => li.classList.remove('active'));
         if (element) element.classList.add('active');
 
         // 3. Filter items based on year
@@ -391,8 +390,8 @@ subtitle: Click on the thumbnail to watch
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Initialize with the current academic year
-        const activeLi = document.querySelector('.toc-list li.active');
+        // Initialize with the current academic year targeting the sub-nav-list
+        const activeLi = document.querySelector('.sub-nav-list li.active');
         filterVideos('2025-26', activeLi);
     });
 </script>
