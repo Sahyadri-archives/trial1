@@ -8,22 +8,7 @@ subtitle: Click on the thumbnail to watch
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* 1. AGGRESSIVELY RESET THEME OFFSETS AND MARGINS */
-        .container, .container-md, .container-fluid, .row {
-            max-width: 100% !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            width: 100% !important;
-        }
-        
-        [class*="col-"] {
-            max-width: 100% !important;
-            flex: 0 0 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        /* 2. MAIN CONTAINER - Forced block to break old side-by-side flex layout */
+        /* MAIN CONTAINER - Forced block to break old side-by-side flex layout */
         .videos-page-container {
             display: block !important; 
             width: 100% !important;
@@ -33,7 +18,7 @@ subtitle: Click on the thumbnail to watch
             box-sizing: border-box;
         }
 
-        /* 3. HORIZONTAL NAVIGATION - Forced Center */
+        /* HORIZONTAL NAVIGATION - Forced Center */
         .sub-nav-options {
             display: block !important;
             width: 100% !important;
@@ -71,7 +56,7 @@ subtitle: Click on the thumbnail to watch
             font-weight: bold;
         }
 
-        /* 4. VIDEO CONTENT GRID */
+        /* VIDEO CONTENT GRID */
         .videos-content {
             display: block !important;
             width: 100% !important;
@@ -124,7 +109,7 @@ subtitle: Click on the thumbnail to watch
             line-height: 1.3;
         }
 
-        /* 5. MOBILE ADJUSTMENTS */
+        /* MOBILE ADJUSTMENTS */
         @media (max-width: 992px) {
             .sub-nav-list {
                 gap: 1.5rem;
