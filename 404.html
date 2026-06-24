@@ -17,8 +17,12 @@ permalink: /404.html
   const currentPath = window.location.pathname;
 
   // Check if the path includes the profiles directory
+ <script>
+  const currentPath = window.location.pathname;
+
   if (currentPath.includes('/profiles/')) {
-    // Redirect to your specific landing page
-    window.location.replace('/not_done_yet'); 
+    // Redirect using a relative URL (adjust the path below as needed)
+    window.location.replace('../not_done_yet.html'); 
   }
 </script>
+
