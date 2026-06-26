@@ -62,42 +62,34 @@ subtitle: Click on thumbnail to open the album
             width: 100% !important;
         }
 
+        /* Unified CSS Grid Layout */
         .album-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            justify-content: center; /* Centers the grid if it doesn't span full width */
+            justify-content: center;
             gap: 30px; 
             width: 100%;
         }
 
         .album-item {
-            width: 100%;
             display: flex;
             flex-direction: column;
-            margin: 0;
+            margin: 0; /* Margin removed because Grid 'gap' handles spacing */
         }
 
         .album-item img {
             width: 100%; 
             height: auto;
-            aspect-ratio: 3 / 2;
+            aspect-ratio: 3 / 2; /* Controls the size proportion of the thumbnails */
             object-fit: cover;
             border-radius: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease;
         }
-
-        .album-item img:hover {
-            transform: translateY(-3px);
-        }
-
+        
         .album-item figcaption {
             font-size: 1.1rem !important;
             text-align: center;
-            white-space: normal; 
-            margin-top: 10px;
-            color: #4a5568;
-            line-height: 1.3;
+            white-space: normal;
+            margin-top: 8px;
         }
 
         /* MOBILE ADJUSTMENTS */
