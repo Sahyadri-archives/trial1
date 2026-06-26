@@ -64,15 +64,14 @@ subtitle: Click on the thumbnail to watch
 
         .video-grid {
             display: grid;
-            /* Videos look slightly better a bit wider than photos, so using 320px min */
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            /* Matched identically to the photos grid sizing */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             justify-content: center;
             gap: 30px; 
             width: 100%;
         }
 
         .video-item {
-            width: 100%;
             display: flex;
             flex-direction: column;
             margin: 0;
@@ -81,17 +80,11 @@ subtitle: Click on the thumbnail to watch
         .video-wrapper {
             display: block;
             width: 100%;
-            aspect-ratio: 16 / 9; /* Standard video widescreen ratio */
+            aspect-ratio: 3 / 2; /* Matched to photo albums */
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             background: #000;
             cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .video-wrapper:hover {
-            transform: translateY(-3px);
         }
 
         .video-wrapper img { 
@@ -101,12 +94,10 @@ subtitle: Click on the thumbnail to watch
         }
 
         .video-item figcaption {
-            font-size: 1.2rem !important;
+            font-size: 1.1rem !important; /* Matched to photos */
             text-align: center;
             white-space: normal; 
-            margin-top: 12px;
-            color: #4a5568;
-            line-height: 1.3;
+            margin-top: 8px;
         }
 
         /* MOBILE ADJUSTMENTS */
@@ -116,8 +107,9 @@ subtitle: Click on the thumbnail to watch
             }
 
             .video-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-                gap: 20px;
+                /* Matched identically to the photos mobile grid sizing */
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 15px;
             }
         }
         
@@ -161,147 +153,147 @@ subtitle: Click on the thumbnail to watch
                 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="u0xvy8fAF68">
-                        <img src="https://img.youtube.com/vi/u0xvy8fAF68/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/u0xvy8fAF68/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Assembly by Shirali Sir, 5th March 2026</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="B_DAFuXGtTU">
-                        <img src="https://img.youtube.com/vi/B_DAFuXGtTU/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/B_DAFuXGtTU/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Marathi Play by Class 6, 29th January 2026</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="wDh2AIq0-hM">
-                        <img src="https://img.youtube.com/vi/wDh2AIq0-hM/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/wDh2AIq0-hM/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Lezim, 26th January 2026</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="SpNSMveVNds">
-                        <img src="https://img.youtube.com/vi/SpNSMveVNds/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/SpNSMveVNds/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Sitar Performance by Class 10, 24th January 2026</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="eU4VrkcdSvs">
-                        <img src="https://img.youtube.com/vi/eU4VrkcdSvs/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/eU4VrkcdSvs/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Bharatnatyam Performance, 24th January 2026</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="Obl5Lb9q7XQ">
-                        <img src="https://img.youtube.com/vi/Obl5Lb9q7XQ/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/Obl5Lb9q7XQ/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Makar Sankranti Assembly by Class 7, 14th January 2026</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="CnecjkzddkQ">
-                        <img src="https://img.youtube.com/vi/CnecjkzddkQ/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/CnecjkzddkQ/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Sitar Performance by Class 9, 9th January 2026</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="mHJ_fxARq4M">
-                        <img src="https://img.youtube.com/vi/mHJ_fxARq4M/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/mHJ_fxARq4M/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Marathi Play by Class 4, 2nd January 2026</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="__tZje9ac2s">
-                        <img src="https://img.youtube.com/vi/__tZje9ac2s/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/__tZje9ac2s/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Music Assembly, 29th December 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="yrDStgogQXU">
-                        <img src="https://img.youtube.com/vi/yrDStgogQXU/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/yrDStgogQXU/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Assembly by Vocal Student, 6th December 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="i1QVFCgJXNs">
-                        <img src="https://img.youtube.com/vi/i1QVFCgJXNs/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/i1QVFCgJXNs/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Class 10 Play "O Captain, My Captain", 30th August 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="cn3509apTVI">
-                        <img src="https://img.youtube.com/vi/cn3509apTVI/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/cn3509apTVI/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Sitar Performance by Class 12, 23rd August 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="usXoO01skhs">
-                        <img src="https://img.youtube.com/vi/usXoO01skhs/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/usXoO01skhs/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Performing Art - Tabla, 21st August 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="ygj32W4sj2E">
-                        <img src="https://img.youtube.com/vi/ygj32W4sj2E/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/ygj32W4sj2E/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Bharatanatyam and Kathak Dance Performance, 13th August 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="HD3EPAhiQV0">
-                        <img src="https://img.youtube.com/vi/HD3EPAhiQV0/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/HD3EPAhiQV0/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Cultural Event - Jaltarang by Pt Milind, 9th August 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="2a8wG0gDRV8">
-                        <img src="https://img.youtube.com/vi/2a8wG0gDRV8/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/2a8wG0gDRV8/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Marathi Music Assembly by Classes 5 & 6, 5th August 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="AY7zaDn7RCo">
-                        <img src="https://img.youtube.com/vi/AY7zaDn7RCo/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/AY7zaDn7RCo/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Class 11 Play, 26th July 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="2ZmZCpq9y0M">
-                        <img src="https://img.youtube.com/vi/2ZmZCpq9y0M/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/2ZmZCpq9y0M/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Freshers Eve, 12th July 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2025-26">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="6rLuDnX8FDA">
-                        <img src="https://img.youtube.com/vi/6rLuDnX8FDA/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/6rLuDnX8FDA/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Miya Tansen, 28th June 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2024-25">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="xgelWzEUYPA">
-                        <img src="https://img.youtube.com/vi/xgelWzEUYPA/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/xgelWzEUYPA/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Assembly, 21st Mar 2025</figcaption>
                 </figure>
 
                 <figure class="video-item" data-academic-year="2024-25">
                     <div class="video-wrapper" onclick="loadVideo(this)" data-video="-bvpjpW-FOo">
-                        <img src="https://img.youtube.com/vi/-bvpjpW-FOo/hqdefault.jpg">
+                        <img src="https://img.youtube.com/vi/-bvpjpW-FOo/hqdefault.jpg" alt="Video Thumbnail">
                     </div>
                     <figcaption>Hindi Play, 15th Mar 2025</figcaption>
                 </figure>
